@@ -6,47 +6,41 @@
   <title>Wikiverse</title>
   <meta
     name="description"
-    content="Wikiverse ile keşfet, kaydet ve bilgiye daha akıcı bir deneyimle geri dön."
+    content="Wikiverse ile bilgiyi daha sakin, daha düzenli ve daha rafine bir deneyimle keşfet."
   />
   <style>
     :root {
       color-scheme: dark;
-      --bg: #05070c;
-      --bg-soft: #0a0d14;
-      --surface: rgba(255, 255, 255, 0.045);
-      --surface-strong: rgba(255, 255, 255, 0.075);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(255, 255, 255, 0.14);
-      --text: rgba(255, 255, 255, 0.96);
-      --muted: rgba(255, 255, 255, 0.60);
-      --soft: rgba(255, 255, 255, 0.38);
-      --accent: #a8b8ff;
-      --accent-soft: rgba(168, 184, 255, 0.18);
-      --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.42);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
+      --bg: #050506;
+      --bg-2: #0a0a0d;
+      --panel: rgba(255,255,255,0.035);
+      --panel-2: rgba(255,255,255,0.055);
+      --line: rgba(255,255,255,0.08);
+      --line-strong: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.96);
+      --muted: rgba(255,255,255,0.58);
+      --soft: rgba(255,255,255,0.34);
+      --accent: #c9d4ff;
+      --accent-2: #8da2ff;
+      --shadow: 0 24px 70px rgba(0,0,0,0.38);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
       --radius-md: 18px;
-      --radius-sm: 14px;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display",
-        "Segoe UI", Roboto, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 0%, rgba(168, 184, 255, 0.12), transparent 28%),
-        radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.06), transparent 22%),
-        linear-gradient(180deg, #070910 0%, #05070c 44%, #04060b 100%);
+        radial-gradient(circle at 8% 0%, rgba(141,162,255,0.10), transparent 24%),
+        radial-gradient(circle at 100% 12%, rgba(255,255,255,0.04), transparent 18%),
+        linear-gradient(180deg, #070709 0%, #050506 48%, #030304 100%);
       letter-spacing: -0.01em;
     }
 
@@ -63,16 +57,16 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 30;
       backdrop-filter: blur(18px);
-      background: rgba(5, 7, 12, 0.58);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(5,5,6,0.58);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .nav-inner {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -83,37 +77,40 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.06rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 15px;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
-        linear-gradient(180deg, rgba(168,184,255,0.22), rgba(168,184,255,0.08));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: var(--shadow-lg);
       font-weight: 800;
-      color: #fff;
+      font-size: 0.98rem;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02)),
+        linear-gradient(180deg, rgba(141,162,255,0.22), rgba(141,162,255,0.08));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
     }
 
-    .brand-name {
+    .brand-copy {
       display: flex;
       flex-direction: column;
       line-height: 1.05;
     }
 
-    .brand-name span:last-child {
+    .brand-copy strong {
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-copy span {
       font-size: 0.78rem;
       color: var(--muted);
       font-weight: 500;
-      letter-spacing: 0.01em;
     }
 
     .nav-links {
@@ -121,12 +118,8 @@
       align-items: center;
       gap: 22px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       font-weight: 500;
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -134,83 +127,60 @@
     }
 
     .hero {
-      padding: 68px 0 40px;
-    }
-
-    .hero-shell {
-      position: relative;
-      overflow: hidden;
-      border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)),
-        linear-gradient(135deg, rgba(168,184,255,0.06), transparent 45%);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .hero-shell::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(168,184,255,0.12), transparent 28%),
-        radial-gradient(circle at 100% 20%, rgba(255,255,255,0.05), transparent 20%);
-      pointer-events: none;
+      padding: 56px 0 26px;
     }
 
     .hero-grid {
-      position: relative;
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 30px;
-      padding: 42px;
-      min-height: 640px;
+      align-items: stretch;
     }
 
     .hero-copy {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 28px;
+      min-height: 620px;
+      padding: 10px 0 6px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      width: fit-content;
       padding: 10px 14px;
       border-radius: 999px;
-      width: fit-content;
-      background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
       color: var(--accent);
       font-size: 0.84rem;
       font-weight: 650;
-      letter-spacing: 0.01em;
     }
 
-    .hero h1 {
-      margin: 0;
-      max-width: 10.5ch;
-      font-size: clamp(3rem, 6vw, 6rem);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
+    h1 {
+      margin: 20px 0 0;
+      max-width: 9.8ch;
+      font-size: clamp(3.3rem, 6vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
       font-weight: 760;
     }
 
-    .hero p.lead {
-      margin: 0;
-      max-width: 54ch;
+    .lead {
+      margin: 24px 0 0;
+      max-width: 50ch;
       color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.65;
+      font-size: 1.06rem;
+      line-height: 1.72;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      padding-top: 6px;
+      margin-top: 32px;
     }
 
     .button {
@@ -221,10 +191,9 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      font-weight: 650;
       font-size: 0.98rem;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      font-weight: 650;
+      transition: 0.2s ease;
     }
 
     .button:hover {
@@ -232,101 +201,89 @@
     }
 
     .button.primary {
-      color: #fff;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
-        linear-gradient(180deg, rgba(168,184,255,0.26), rgba(168,184,255,0.14));
-      border-color: rgba(255,255,255,0.10);
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02)),
+        linear-gradient(180deg, rgba(141,162,255,0.24), rgba(141,162,255,0.10));
+      border: 1px solid rgba(255,255,255,0.10);
+      color: white;
     }
 
     .button.secondary {
-      color: var(--text);
       background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
     }
 
     .hero-meta {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      padding-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
     }
 
-    .meta-item {
-      min-width: 120px;
+    .meta-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
-    .meta-item strong {
+    .meta-card strong {
       display: block;
-      font-size: 1.2rem;
-      font-weight: 720;
+      font-size: 1rem;
+      margin-bottom: 6px;
       letter-spacing: -0.03em;
-      margin-bottom: 4px;
     }
 
-    .meta-item span {
+    .meta-card span {
+      display: block;
       color: var(--muted);
       font-size: 0.92rem;
+      line-height: 1.55;
     }
 
     .hero-visual {
       position: relative;
-      min-height: 540px;
+      min-height: 620px;
+      border-radius: 42px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        radial-gradient(circle at 0% 0%, rgba(141,162,255,0.10), transparent 22%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 35%),
+        radial-gradient(circle at 100% 100%, rgba(255,255,255,0.03), transparent 24%);
+      pointer-events: none;
+    }
+
+    .editorial-surface {
+      position: absolute;
+      inset: 28px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+    }
+
+    .surface-top {
       display: flex;
       align-items: center;
-      justify-content: center;
-    }
-
-    .visual-stack {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    .floating-panel {
-      position: absolute;
-      border-radius: 28px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(18px);
-      overflow: hidden;
-    }
-
-    .floating-panel .panel-inner {
-      padding: 22px;
-    }
-
-    .floating-panel.primary {
-      inset: 8% 7% 22% 10%;
-    }
-
-    .floating-panel.secondary {
-      width: 62%;
-      right: 0;
-      bottom: 5%;
-      min-height: 170px;
-    }
-
-    .floating-panel.tertiary {
-      width: 52%;
-      left: 0;
-      bottom: 0;
-      min-height: 140px;
-    }
-
-    .reading-top {
-      display: flex;
       justify-content: space-between;
-      align-items: start;
-      gap: 16px;
+      gap: 14px;
     }
 
     .chip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      width: fit-content;
       padding: 8px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,0.05);
@@ -334,248 +291,299 @@
       color: var(--soft);
       font-size: 0.8rem;
       font-weight: 600;
-      width: fit-content;
+    }
+
+    .reading-card {
+      align-self: center;
+      margin: 0 auto;
+      width: min(92%, 470px);
+      min-height: 360px;
+      border-radius: 30px;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .reading-kicker {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .reading-title {
-      margin: 18px 0 10px;
-      font-size: 1.72rem;
-      line-height: 1.06;
-      font-weight: 720;
-      letter-spacing: -0.05em;
-      max-width: 12ch;
+      margin-top: 18px;
+      font-size: 2.15rem;
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      font-weight: 740;
+      max-width: 10ch;
     }
 
-    .reading-text {
+    .reading-body {
+      margin-top: 14px;
       color: var(--muted);
-      max-width: 32ch;
       font-size: 0.98rem;
-      line-height: 1.6;
+      line-height: 1.7;
+      max-width: 30ch;
     }
 
     .reading-lines {
       display: grid;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 26px;
     }
 
     .reading-lines span,
-    .mini-lines span {
+    .small-lines span {
       display: block;
       height: 10px;
       border-radius: 999px;
       background: rgba(255,255,255,0.08);
     }
 
-    .reading-lines span:nth-child(1) { width: 92%; }
-    .reading-lines span:nth-child(2) { width: 76%; }
-    .reading-lines span:nth-child(3) { width: 84%; }
+    .reading-lines span:nth-child(1) { width: 90%; }
+    .reading-lines span:nth-child(2) { width: 74%; }
+    .reading-lines span:nth-child(3) { width: 82%; }
     .reading-lines span:nth-child(4) { width: 58%; }
 
-    .mini-title {
-      font-size: 1.05rem;
-      font-weight: 680;
+    .surface-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .small-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .small-card strong {
+      display: block;
+      font-size: 1rem;
+      margin-top: 8px;
       letter-spacing: -0.03em;
-      margin: 10px 0 6px;
     }
 
-    .mini-copy {
+    .small-card p {
+      margin: 8px 0 12px;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
-      margin: 0 0 14px;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    .mini-lines {
+    .small-lines {
       display: grid;
       gap: 8px;
     }
 
-    .mini-lines span:nth-child(1) { width: 88%; }
-    .mini-lines span:nth-child(2) { width: 72%; }
-    .mini-lines span:nth-child(3) { width: 56%; }
+    .small-lines span:nth-child(1) { width: 84%; }
+    .small-lines span:nth-child(2) { width: 66%; }
+    .small-lines span:nth-child(3) { width: 52%; }
 
     .section {
-      padding: 30px 0 24px;
+      padding: 26px 0;
     }
 
     .section-head {
       display: flex;
       justify-content: space-between;
       align-items: end;
-      gap: 20px;
-      margin-bottom: 22px;
+      gap: 18px;
+      margin-bottom: 20px;
     }
 
     .section-head h2 {
       margin: 0;
       font-size: clamp(1.9rem, 4vw, 3rem);
-      line-height: 1;
       letter-spacing: -0.05em;
+      line-height: 1;
+      max-width: 12ch;
     }
 
     .section-head p {
       margin: 0;
-      color: var(--muted);
       max-width: 42ch;
-      line-height: 1.6;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
-    .feature-grid {
+    .editorial-grid {
       display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 18px;
-      grid-template-columns: repeat(12, 1fr);
     }
 
-    .feature-card {
-      grid-column: span 4;
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-lg);
-      min-height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .feature-main,
+    .feature-side,
+    .legal-block,
+    .legal-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
     }
 
-    .feature-no {
-      font-size: 0.82rem;
+    .feature-main {
+      padding: 26px;
+      min-height: 340px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .feature-main .label,
+    .feature-side .label {
       color: var(--accent);
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .feature-card h3 {
-      margin: 14px 0 8px;
-      font-size: 1.38rem;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+    .feature-main h3,
+    .feature-side h3 {
+      margin: 14px 0 10px;
+      font-size: 2rem;
+      line-height: 0.98;
+      letter-spacing: -0.06em;
     }
 
-    .feature-card p {
+    .feature-main p,
+    .feature-side p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.98rem;
+      line-height: 1.7;
+      max-width: 45ch;
     }
 
-    .feature-visual {
-      margin-top: 20px;
-      min-height: 78px;
-      border-radius: 18px;
+    .feature-surface {
+      margin-top: 24px;
+      padding: 18px;
+      min-height: 112px;
+      border-radius: 22px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.06);
-      padding: 14px;
       display: grid;
       gap: 10px;
       align-content: center;
     }
 
-    .feature-visual span {
+    .feature-surface span {
       display: block;
+      height: 10px;
       border-radius: 999px;
       background: rgba(255,255,255,0.08);
-      height: 9px;
     }
 
-    .feature-visual span:nth-child(1) { width: 84%; }
-    .feature-visual span:nth-child(2) { width: 64%; }
-    .feature-visual span:nth-child(3) { width: 76%; }
+    .feature-surface span:nth-child(1) { width: 88%; }
+    .feature-surface span:nth-child(2) { width: 70%; }
+    .feature-surface span:nth-child(3) { width: 76%; }
 
-    .feature-card.large {
-      grid-column: span 6;
+    .feature-side-wrap {
+      display: grid;
+      gap: 18px;
     }
 
-    .legal-band {
-      padding: 36px 0 54px;
+    .feature-side {
+      padding: 22px;
+      min-height: 161px;
     }
 
-    .legal-shell {
+    .legal {
+      padding: 34px 0 54px;
+    }
+
+    .legal-wrap {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 18px;
       align-items: stretch;
     }
 
-    .legal-copy,
-    .legal-links {
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .legal-copy {
+    .legal-block {
       padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
     }
 
-    .legal-copy h3 {
+    .legal-block h3 {
       margin: 0 0 10px;
-      font-size: 1.8rem;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      font-size: 2rem;
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 12ch;
     }
 
-    .legal-copy p {
+    .legal-block p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.7;
-      max-width: 46ch;
+      line-height: 1.75;
+      max-width: 44ch;
     }
 
-    .legal-links {
-      padding: 18px;
+    .legal-list {
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .legal-link {
+    .legal-card {
       padding: 18px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
+      transition: 0.2s ease;
+    }
+
+    .legal-card:hover {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+      background: var(--panel-2);
+    }
+
+    .legal-card-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       gap: 14px;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      align-items: start;
     }
 
-    .legal-link:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.12);
-      transform: translateY(-1px);
-    }
-
-    .legal-link strong {
+    .legal-card strong {
       display: block;
       font-size: 1rem;
       letter-spacing: -0.02em;
     }
 
-    .legal-link span {
+    .legal-card span {
+      display: block;
+      margin-top: 6px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
     .arrow {
       color: var(--soft);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
+      padding-top: 2px;
     }
 
     .footer {
-      padding: 0 0 54px;
+      padding: 0 0 52px;
     }
 
-    .footer-shell {
+    .footer-line {
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 18px;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
       color: var(--soft);
       font-size: 0.92rem;
@@ -583,8 +591,8 @@
 
     .footer-links {
       display: flex;
-      flex-wrap: wrap;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .footer-links a:hover {
@@ -593,26 +601,27 @@
 
     @media (max-width: 980px) {
       .hero-grid,
-      .legal-shell {
+      .editorial-grid,
+      .legal-wrap {
         grid-template-columns: 1fr;
       }
 
-      .feature-card,
-      .feature-card.large {
-        grid-column: span 12;
-      }
-
-      .hero {
-        padding-top: 38px;
-      }
-
-      .hero-grid {
+      .hero-copy {
         min-height: auto;
-        padding: 24px;
       }
 
       .hero-visual {
-        min-height: 480px;
+        min-height: auto;
+      }
+
+      .editorial-surface {
+        position: relative;
+        inset: auto;
+        padding: 22px;
+      }
+
+      .reading-card {
+        width: 100%;
       }
     }
 
@@ -626,36 +635,12 @@
         display: none;
       }
 
-      .hero-grid {
-        padding: 18px;
+      .hero {
+        padding-top: 34px;
       }
 
-      .hero-shell {
-        border-radius: 28px;
-      }
-
-      .floating-panel.primary {
-        inset: 0 0 auto 0;
-        position: relative;
-        min-height: 320px;
-      }
-
-      .floating-panel.secondary,
-      .floating-panel.tertiary {
-        position: relative;
-        width: 100%;
-        right: auto;
-        left: auto;
-        bottom: auto;
-        margin-top: 14px;
-      }
-
-      .hero-visual {
-        min-height: auto;
-      }
-
-      .hero h1 {
-        max-width: 12ch;
+      h1 {
+        max-width: 10.5ch;
       }
 
       .hero-actions {
@@ -666,8 +651,26 @@
         width: 100%;
       }
 
-      .hero-meta {
-        gap: 18px;
+      .hero-meta,
+      .surface-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        border-radius: 28px;
+      }
+
+      .editorial-surface {
+        padding: 16px;
+      }
+
+      .reading-card,
+      .small-card,
+      .feature-main,
+      .feature-side,
+      .legal-block,
+      .legal-card {
+        border-radius: 22px;
       }
     }
   </style>
@@ -677,14 +680,14 @@
     <div class="nav-inner">
       <a class="brand" href="index.html">
         <span class="brand-mark">W</span>
-        <span class="brand-name">
-          <span>Wikiverse</span>
+        <span class="brand-copy">
+          <strong>Wikiverse</strong>
           <span>Read with more clarity</span>
         </span>
       </a>
 
       <nav class="nav-links">
-        <a href="#features">Özellikler</a>
+        <a href="#experience">Deneyim</a>
         <a href="privacy.html">Gizlilik</a>
         <a href="terms.html">Kullanım Koşulları</a>
         <a href="mailto:wikiverseapp@gmail.com">İletişim</a>
@@ -695,86 +698,84 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="hero-shell">
-          <div class="hero-grid">
-            <div class="hero-copy">
-              <div>
-                <div class="eyebrow">Wikiverse</div>
-                <h1>Keşfet, kaydet, geri dön.</h1>
-                <p class="lead">
-                  Wikiverse, bilgi akışını daha sakin, daha temiz ve daha akıcı
-                  hale getirmek için tasarlandı. Daha az dağınıklık, daha güçlü
-                  odak ve daha iyi bir okuma deneyimi.
-                </p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <div class="eyebrow">Wikiverse</div>
+              <h1>Bilgiye daha sakin bir yüzey kazandır.</h1>
+              <p class="lead">
+                Wikiverse; keşfetmeyi, kaydetmeyi ve geri dönmeyi daha rafine bir
+                deneyime dönüştürür. Daha az gürültü, daha iyi odak ve daha temiz
+                bir içerik akışı.
+              </p>
 
-                <div class="hero-actions">
-                  <a class="button primary" href="privacy.html">Gizlilik Politikası</a>
-                  <a class="button secondary" href="terms.html">Kullanım Koşulları</a>
-                </div>
-              </div>
-
-              <div class="hero-meta">
-                <div class="meta-item">
-                  <strong>Discover</strong>
-                  <span>İlgi alanına uygun içeriklere daha hızlı ulaş.</span>
-                </div>
-                <div class="meta-item">
-                  <strong>Save</strong>
-                  <span>Daha sonra dönmek istediğin içerikleri sakla.</span>
-                </div>
-                <div class="meta-item">
-                  <strong>Premium</strong>
-                  <span>Daha temiz ve odaklı bir ürün deneyimi.</span>
-                </div>
+              <div class="hero-actions">
+                <a class="button primary" href="privacy.html">Gizlilik Politikası</a>
+                <a class="button secondary" href="terms.html">Kullanım Koşulları</a>
               </div>
             </div>
 
-            <div class="hero-visual">
-              <div class="visual-stack">
-                <div class="floating-panel primary">
-                  <div class="panel-inner">
-                    <div class="reading-top">
-                      <div class="chip">Reading Surface</div>
-                      <div class="chip">Saved</div>
-                    </div>
+            <div class="hero-meta">
+              <div class="meta-card">
+                <strong>Discover</strong>
+                <span>İlgi alanlarını daha net yüzeylerde takip et.</span>
+              </div>
+              <div class="meta-card">
+                <strong>Save</strong>
+                <span>Sonra dönmek istediğin içerikleri kaybetme.</span>
+              </div>
+              <div class="meta-card">
+                <strong>Premium</strong>
+                <span>Daha temiz ve daha odaklı bir ürün deneyimi.</span>
+              </div>
+            </div>
+          </div>
 
-                    <div class="reading-title">Knowledge, organized for returning later.</div>
-                    <div class="reading-text">
-                      İçerikleri sadece açmak değil, gerçekten geri dönülebilir
-                      hale getirmek için daha sade bir okuma yüzeyi.
-                    </div>
+          <div class="hero-visual">
+            <div class="editorial-surface">
+              <div class="surface-top">
+                <span class="chip">Reading Surface</span>
+                <span class="chip">Saved</span>
+              </div>
 
-                    <div class="reading-lines">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
+              <div class="reading-card">
+                <div>
+                  <div class="reading-kicker">Wikiverse</div>
+                  <div class="reading-title">Knowledge, saved for returning later.</div>
+                  <div class="reading-body">
+                    İçeriklerle olan ilişkin yalnızca “aç ve geç” değil. Daha iyi
+                    bir geri dönüş hissi, daha temiz bir okuma akışı.
                   </div>
                 </div>
 
-                <div class="floating-panel secondary">
-                  <div class="panel-inner">
-                    <div class="chip">Premium</div>
-                    <div class="mini-title">Daha temiz, daha odaklı deneyim</div>
-                    <p class="mini-copy">
-                      Reklamsız kullanım ve gelişmiş ürün deneyimiyle daha akıcı keşif.
-                    </p>
-                    <div class="mini-lines">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
+                <div class="reading-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="surface-bottom">
+                <div class="small-card">
+                  <span class="chip">Discover</span>
+                  <strong>Daha akıcı keşif</strong>
+                  <p>İçeriği daha kolay takip et ve dağınıklığı azalt.</p>
+                  <div class="small-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
                 </div>
 
-                <div class="floating-panel tertiary">
-                  <div class="panel-inner">
-                    <div class="chip">Discover</div>
-                    <div class="mini-title">Kaydet. Geri dön. Devam et.</div>
-                    <p class="mini-copy">
-                      Bilgiyi sadece okumak değil, izini kaybetmeden sürdürmek için.
-                    </p>
+                <div class="small-card">
+                  <span class="chip">Premium</span>
+                  <strong>Daha temiz deneyim</strong>
+                  <p>Reklamsız ve daha rafine bir kullanım katmanı.</p>
+                  <div class="small-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
                 </div>
               </div>
@@ -784,95 +785,88 @@
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="experience">
       <div class="container">
         <div class="section-head">
-          <h2>Bilgiyi daha iyi deneyimlemek için tasarlandı.</h2>
+          <h2>Daha iyi bir bilgi deneyimi için tasarlandı.</h2>
           <p>
-            Wikiverse; içerik keşfini, kaydetmeyi ve geri dönmeyi daha tutarlı
-            bir deneyime dönüştüren temel katmanlar üzerine kurulur.
+            Wikiverse’in dili; daha az dikkat dağınıklığı, daha net bir okuma
+            akışı ve geri dönülebilir içerik deneyimi üzerine kurulu.
           </p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card large">
+        <div class="editorial-grid">
+          <div class="feature-main">
             <div>
-              <div class="feature-no">01 / Discover</div>
-              <h3>İçerikler arasında daha akıcı gezin.</h3>
+              <div class="label">01 / Discover</div>
+              <h3>Keşfetmeyi daha seçici ve daha akıcı hale getir.</h3>
               <p>
-                Dağınık bilgi akışını sadeleştirerek, seni gerçekten ilgilendiren
-                başlıklara daha hızlı ulaşmanı sağlar.
+                İçeriğe ulaşmak kadar, ilgini çeken şeyi tekrar bulabilmek de
+                önemlidir. Wikiverse bunu daha kontrollü bir deneyime dönüştürür.
               </p>
             </div>
-            <div class="feature-visual">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </article>
 
-          <article class="feature-card">
-            <div>
-              <div class="feature-no">02 / Save</div>
-              <h3>Daha sonra dönmek istediğini kaybetme.</h3>
-              <p>
-                İçerikleri kaydet, düzenle ve kendi okuma akışını daha kontrollü
-                şekilde sürdür.
-              </p>
-            </div>
-            <div class="feature-visual">
+            <div class="feature-surface">
               <span></span>
               <span></span>
               <span></span>
             </div>
-          </article>
+          </div>
 
-          <article class="feature-card">
-            <div>
-              <div class="feature-no">03 / Premium</div>
-              <h3>Daha temiz bir deneyime geç.</h3>
+          <div class="feature-side-wrap">
+            <div class="feature-side">
+              <div class="label">02 / Save</div>
+              <h3>Kaydet ve geri dön.</h3>
               <p>
-                Premium ile daha rafine, daha sakin ve daha az dikkat dağıtan bir
-                kullanım deneyimi elde et.
+                İçerikleri biriktirmek değil, gerçekten geri dönebileceğin bir
+                düzen kurmak için.
               </p>
             </div>
-            <div class="feature-visual">
-              <span></span>
-              <span></span>
-              <span></span>
+
+            <div class="feature-side">
+              <div class="label">03 / Premium</div>
+              <h3>Daha az gürültü, daha çok odak.</h3>
+              <p>
+                Premium deneyim, ürünün daha sakin ve daha rafine katmanını açar.
+              </p>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="legal-band">
+    <section class="legal">
       <div class="container">
-        <div class="legal-shell">
-          <div class="legal-copy">
-            <h3>Şeffaflık ve güven, ürün deneyiminin parçası.</h3>
-            <p>
-              Gizlilik politikamıza ve kullanım koşullarımıza buradan
-              ulaşabilirsiniz. Bu sayfalar; veri işleme, premium erişim ve temel
-              kullanım ilkeleri hakkında açık bilgi sunar.
-            </p>
+        <div class="legal-wrap">
+          <div class="legal-block">
+            <div>
+              <h3>Şeffaflık, deneyimin bir parçası.</h3>
+              <p>
+                Gizlilik politikası ve kullanım koşulları; veri işleme, premium
+                erişim ve uygulama deneyiminin temel çerçevesi hakkında açık bilgi sunar.
+              </p>
+            </div>
           </div>
 
-          <div class="legal-links">
-            <a class="legal-link" href="privacy.html">
-              <div>
-                <strong>Gizlilik Politikası</strong>
-                <span>Verilerin nasıl işlendiğini ve hangi servislerin kullanıldığını inceleyin.</span>
+          <div class="legal-list">
+            <a class="legal-card" href="privacy.html">
+              <div class="legal-card-top">
+                <div>
+                  <strong>Gizlilik Politikası</strong>
+                  <span>Hangi verilerin nasıl işlendiğini ve hangi servislerin kullanıldığını inceleyin.</span>
+                </div>
+                <div class="arrow">→</div>
               </div>
-              <span class="arrow">→</span>
             </a>
 
-            <a class="legal-link" href="terms.html">
-              <div>
-                <strong>Kullanım Koşulları</strong>
-                <span>Premium erişim, satın almalar ve genel kullanım ilkeleri hakkında bilgi alın.</span>
+            <a class="legal-card" href="terms.html">
+              <div class="legal-card-top">
+                <div>
+                  <strong>Kullanım Koşulları</strong>
+                  <span>Premium erişim, satın almalar ve kullanım ilkeleri hakkında bilgi alın.</span>
+                </div>
+                <div class="arrow">→</div>
               </div>
-              <span class="arrow">→</span>
             </a>
           </div>
         </div>
@@ -882,7 +876,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-shell">
+      <div class="footer-line">
         <div>© 2026 Wikiverse</div>
         <div class="footer-links">
           <a href="privacy.html">Gizlilik</a>
