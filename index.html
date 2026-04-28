@@ -15,25 +15,22 @@
       color-scheme: dark;
 
       --bg: #050506;
-      --bg-soft: #0b0b0e;
-      --card: rgba(255, 255, 255, 0.045);
-      --card-strong: rgba(255, 255, 255, 0.075);
-      --line: rgba(255, 255, 255, 0.09);
-      --line-strong: rgba(255, 255, 255, 0.16);
+      --surface: #0b0b0d;
+      --surface-soft: rgba(255,255,255,0.045);
+      --surface-hover: rgba(255,255,255,0.065);
 
-      --text: rgba(255, 255, 255, 0.95);
-      --muted: rgba(255, 255, 255, 0.62);
-      --faint: rgba(255, 255, 255, 0.38);
+      --text: rgba(255,255,255,0.94);
+      --muted: rgba(255,255,255,0.58);
+      --faint: rgba(255,255,255,0.34);
 
-      --accent: #d7ddff;
-      --accent-soft: rgba(147, 163, 255, 0.16);
+      --line: rgba(255,255,255,0.09);
+      --line-strong: rgba(255,255,255,0.16);
 
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 16px;
+      --accent: #d9deff;
 
-      --max: 1120px;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      --max: 1080px;
+      --radius: 24px;
+      --radius-sm: 16px;
     }
 
     * {
@@ -57,28 +54,18 @@
         sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 50% -10%, rgba(150, 166, 255, 0.17), transparent 30%),
-        radial-gradient(circle at 90% 8%, rgba(255, 255, 255, 0.055), transparent 24%),
-        linear-gradient(180deg, #08080a 0%, #050506 48%, #030304 100%);
+        radial-gradient(circle at 50% -12%, rgba(150, 160, 255, 0.12), transparent 34%),
+        linear-gradient(180deg, #070708 0%, #050506 54%, #030304 100%);
       letter-spacing: -0.015em;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, black, transparent 70%);
-      opacity: 0.28;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    button {
+      font: inherit;
     }
 
     .container {
@@ -89,40 +76,36 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      background: rgba(5, 5, 6, 0.68);
+      z-index: 10;
+      background: rgba(5,5,6,0.74);
       backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav-inner {
-      min-height: 72px;
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 18px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
     }
 
     .mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 13px;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      font-size: 0.98rem;
       font-weight: 760;
-      color: white;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.025)),
-        linear-gradient(145deg, rgba(147,163,255,0.36), rgba(147,163,255,0.08));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 16px 42px rgba(0,0,0,0.32);
+      font-size: 0.96rem;
+      color: #08080a;
+      background: linear-gradient(180deg, #ffffff, #dfe4ff);
     }
 
     .brand-text {
@@ -132,7 +115,7 @@
     }
 
     .brand-text strong {
-      font-size: 1.02rem;
+      font-size: 1rem;
       font-weight: 720;
       letter-spacing: -0.035em;
     }
@@ -140,508 +123,338 @@
     .brand-text span {
       margin-top: 4px;
       color: var(--faint);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 520;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 540;
     }
 
     .nav-links a {
-      transition: color 0.2s ease;
+      transition: color 0.18s ease;
     }
 
     .nav-links a:hover {
       color: var(--text);
     }
 
-    .nav-cta {
-      padding: 10px 15px;
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
       border-radius: 999px;
-      color: var(--text);
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .lang-btn {
+      height: 30px;
+      min-width: 38px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--faint);
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 680;
+      transition: 0.18s ease;
+    }
+
+    .lang-btn.active {
+      color: #08080a;
+      background: rgba(255,255,255,0.92);
     }
 
     .hero {
-      padding: 88px 0 46px;
+      padding: 96px 0 58px;
     }
 
-    .hero-wrap {
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 40px;
+      align-items: end;
     }
 
-    .hero-copy {
-      min-height: 590px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 10px 0;
-    }
-
-    .pill {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 13px;
-      border-radius: 999px;
+    .eyebrow {
       color: var(--accent);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.82rem;
-      font-weight: 650;
-    }
-
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 22px rgba(215,221,255,0.85);
+      font-size: 0.78rem;
+      font-weight: 760;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin: 24px 0 0;
+      margin: 18px 0 0;
       max-width: 720px;
-      font-size: clamp(3.25rem, 7.1vw, 7.65rem);
-      line-height: 0.9;
+      font-size: clamp(3.35rem, 7.4vw, 7.4rem);
+      line-height: 0.91;
       letter-spacing: -0.085em;
       font-weight: 780;
     }
 
     .lead {
       margin: 26px 0 0;
-      max-width: 590px;
+      max-width: 610px;
       color: var(--muted);
-      font-size: clamp(1rem, 1.35vw, 1.14rem);
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       line-height: 1.75;
     }
 
-    .actions {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
+      gap: 12px;
       margin-top: 34px;
     }
 
     .button {
-      min-height: 52px;
-      padding: 0 19px;
+      min-height: 50px;
+      padding: 0 18px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      font-size: 0.96rem;
+      color: var(--text);
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
+      font-size: 0.94rem;
       font-weight: 650;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      transition: 0.18s ease;
     }
 
     .button:hover {
       transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
     }
 
     .button.primary {
-      color: #060608;
-      background: linear-gradient(180deg, #ffffff, #dfe4ff);
-      border: 1px solid rgba(255,255,255,0.7);
-      box-shadow: 0 18px 48px rgba(147,163,255,0.2);
+      color: #070708;
+      background: linear-gradient(180deg, #ffffff, #e2e6ff);
+      border-color: rgba(255,255,255,0.8);
     }
 
-    .button.secondary {
-      color: var(--text);
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .button.secondary:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.16);
-    }
-
-    .hero-note {
-      margin-top: 22px;
-      color: var(--faint);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 42px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.075);
-      background: rgba(255,255,255,0.035);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--text);
-      font-size: 0.98rem;
-      letter-spacing: -0.025em;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 7px;
-      color: var(--faint);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .visual {
-      position: relative;
-      min-height: 590px;
-      padding: 18px;
-      border-radius: 42px;
-      border: 1px solid rgba(255,255,255,0.09);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.026)),
-        radial-gradient(circle at 0% 0%, rgba(147,163,255,0.19), transparent 35%),
-        rgba(255,255,255,0.026);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .visual::after {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: 41px;
-      pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.09), transparent 28%),
-        radial-gradient(circle at 90% 90%, rgba(255,255,255,0.06), transparent 32%);
-      opacity: 0.65;
-    }
-
-    .phone {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      min-height: 554px;
-      border-radius: 32px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background:
-        linear-gradient(180deg, rgba(8,8,11,0.92), rgba(5,5,7,0.96)),
-        #08080a;
-      overflow: hidden;
+    .hero-card {
       padding: 22px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
     }
 
-    .phone-top {
+    .hero-card-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      gap: 18px;
       color: var(--faint);
       font-size: 0.78rem;
-      font-weight: 650;
+      font-weight: 680;
     }
 
-    .phone-title {
-      margin-top: 34px;
-    }
-
-    .phone-title span {
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 720;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .phone-title h2 {
-      margin: 12px 0 0;
-      max-width: 9ch;
-      font-size: 3.7rem;
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-      font-weight: 760;
-    }
-
-    .search-card {
-      margin-top: 30px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.065);
-      border: 1px solid rgba(255,255,255,0.09);
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .article-stack {
-      margin-top: 18px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .article {
-      padding: 16px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .article small {
-      color: var(--faint);
-      font-size: 0.76rem;
-      font-weight: 650;
-    }
-
-    .article strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 1.02rem;
-      letter-spacing: -0.03em;
-    }
-
-    .article p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.55;
-    }
-
-    .bottom-tabs {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 22px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      padding: 8px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.09);
-      backdrop-filter: blur(20px);
-    }
-
-    .tab {
-      min-height: 42px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      color: var(--faint);
-      font-size: 0.78rem;
-      font-weight: 650;
-    }
-
-    .tab.active {
-      color: #060608;
-      background: rgba(255,255,255,0.92);
-    }
-
-    .section {
-      padding: 34px 0;
-    }
-
-    .section-head {
-      max-width: 720px;
-      margin-bottom: 22px;
-    }
-
-    .kicker {
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 760;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-    }
-
-    .section h2 {
-      margin: 13px 0 0;
-      font-size: clamp(2.1rem, 4.7vw, 4.2rem);
+    .hero-card h2 {
+      margin: 54px 0 0;
+      max-width: 10ch;
+      font-size: clamp(2.3rem, 4vw, 3.75rem);
       line-height: 0.94;
       letter-spacing: -0.075em;
       font-weight: 760;
     }
 
-    .section-desc {
+    .hero-card p {
       margin: 18px 0 0;
-      max-width: 620px;
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.75;
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
 
-    .feature-grid {
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,0.075);
+    }
+
+    .mini-item strong {
+      font-size: 0.94rem;
+      font-weight: 680;
+    }
+
+    .mini-item span {
+      color: var(--faint);
+      font-size: 0.86rem;
+    }
+
+    .section {
+      padding: 38px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0;
+      max-width: 11ch;
+      font-size: clamp(2rem, 4.5vw, 3.9rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+      font-weight: 760;
+    }
+
+    .section-desc {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
 
     .feature {
-      min-height: 230px;
       padding: 22px;
-      border-radius: var(--radius-lg);
-      background: var(--card);
+      min-height: 210px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
       border: 1px solid var(--line);
-      box-shadow: 0 18px 56px rgba(0,0,0,0.25);
     }
 
-    .feature-number {
+    .feature small {
       color: var(--faint);
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       font-weight: 720;
     }
 
     .feature h3 {
-      margin: 48px 0 0;
-      font-size: 1.32rem;
-      line-height: 1.08;
-      letter-spacing: -0.045em;
+      margin: 52px 0 0;
+      font-size: 1.2rem;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
     }
 
     .feature p {
       margin: 12px 0 0;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       line-height: 1.65;
     }
 
     .legal {
-      padding: 46px 0 70px;
+      padding: 42px 0 68px;
     }
 
-    .legal-panel {
+    .legal-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 14px;
-      padding: 14px;
-      border-radius: 34px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.075);
-      box-shadow: var(--shadow);
-    }
-
-    .legal-copy {
-      padding: 28px;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(147,163,255,0.14), transparent 35%),
-        rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .legal-copy h2 {
-      margin: 12px 0 0;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-    }
-
-    .legal-copy p {
-      margin: 18px 0 0;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 470px;
-    }
-
-    .legal-links {
-      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
 
     .legal-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      padding: 24px;
+      min-height: 190px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      transition: 0.18s ease;
     }
 
     .legal-card:hover {
       transform: translateY(-1px);
-      background: rgba(255,255,255,0.065);
-      border-color: rgba(255,255,255,0.15);
+      background: var(--surface-hover);
+      border-color: var(--line-strong);
+    }
+
+    .legal-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
     }
 
     .legal-card strong {
-      display: block;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       letter-spacing: -0.03em;
     }
 
-    .legal-card span {
-      display: block;
-      margin-top: 7px;
+    .legal-card p {
+      margin: 14px 0 0;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
+      font-size: 0.93rem;
+      line-height: 1.65;
+      max-width: 460px;
     }
 
     .arrow {
       color: var(--faint);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .footer {
-      padding: 0 0 46px;
+      padding: 0 0 42px;
     }
 
     .footer-inner {
       padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.075);
       display: flex;
       justify-content: space-between;
-      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
       color: var(--faint);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .footer-links {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
+      gap: 16px;
     }
 
     .footer-links a:hover {
       color: var(--text);
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 900px) {
       .hero {
-        padding-top: 62px;
+        padding: 70px 0 42px;
       }
 
-      .hero-wrap,
-      .legal-panel {
+      .hero-grid,
+      .section-head,
+      .features,
+      .legal-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy {
-        min-height: auto;
-      }
-
-      .visual {
-        min-height: 560px;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
+      .hero-card h2 {
+        margin-top: 44px;
       }
 
       .feature {
@@ -659,11 +472,15 @@
       }
 
       .nav-inner {
-        min-height: 66px;
+        min-height: 64px;
       }
 
       .brand-text span {
         display: none;
+      }
+
+      .nav-actions {
+        gap: 10px;
       }
 
       .nav-links {
@@ -671,11 +488,11 @@
       }
 
       .hero {
-        padding: 42px 0 28px;
+        padding: 48px 0 32px;
       }
 
       h1 {
-        font-size: clamp(3.05rem, 16vw, 4.7rem);
+        font-size: clamp(3rem, 15vw, 4.65rem);
         max-width: 9.5ch;
       }
 
@@ -683,7 +500,7 @@
         font-size: 1rem;
       }
 
-      .actions {
+      .hero-actions {
         flex-direction: column;
       }
 
@@ -691,82 +508,46 @@
         width: 100%;
       }
 
-      .stat-row {
-        grid-template-columns: 1fr;
-        margin-top: 28px;
-      }
-
-      .visual {
-        min-height: 560px;
-        border-radius: 28px;
-        padding: 10px;
-      }
-
-      .phone {
-        min-height: 540px;
-        border-radius: 23px;
-        padding: 18px;
-      }
-
-      .phone-title h2 {
-        font-size: 3rem;
-      }
-
-      .bottom-tabs {
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
-      }
-
-      .tab {
-        font-size: 0.68rem;
-      }
-
-      .section {
-        padding: 28px 0;
-      }
-
-      .legal {
-        padding: 34px 0 52px;
-      }
-
-      .legal-panel {
-        border-radius: 26px;
-        padding: 10px;
-      }
-
-      .legal-copy,
+      .hero-card,
+      .feature,
       .legal-card {
         border-radius: 20px;
+      }
+
+      .hero-card {
         padding: 20px;
       }
 
+      .hero-card h2 {
+        font-size: 2.65rem;
+      }
+
+      .section {
+        padding: 30px 0;
+      }
+
+      .legal {
+        padding: 32px 0 52px;
+      }
+
       .footer-inner {
-        align-items: flex-start;
         flex-direction: column;
       }
     }
 
     @media (max-width: 420px) {
       .mark {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
       }
 
       .brand-text strong {
-        font-size: 0.98rem;
+        font-size: 0.96rem;
       }
 
-      .phone-title h2 {
-        font-size: 2.65rem;
-      }
-
-      .article p {
-        display: none;
-      }
-
-      .bottom-tabs {
-        gap: 6px;
+      .lang-btn {
+        min-width: 34px;
+        padding: 0 8px;
       }
     }
   </style>
@@ -776,20 +557,27 @@
   <header class="nav">
     <div class="container">
       <div class="nav-inner">
-        <a class="brand" href="index.html" aria-label="Wikiverse ana sayfa">
+        <a class="brand" href="index.html" aria-label="Wikiverse">
           <span class="mark">W</span>
           <span class="brand-text">
             <strong>Wikiverse</strong>
-            <span>Wikipedia, refined</span>
+            <span data-i18n="brand_subtitle">Wikipedia, refined</span>
           </span>
         </a>
 
-        <nav class="nav-links" aria-label="Ana menü">
-          <a href="#features">Özellikler</a>
-          <a href="privacy.html">Gizlilik</a>
-          <a href="terms.html">Koşullar</a>
-          <a class="nav-cta" href="mailto:wikiverseapp@gmail.com">Destek</a>
-        </nav>
+        <div class="nav-actions">
+          <nav class="nav-links" aria-label="Main navigation">
+            <a href="#features" data-i18n="nav_features">Özellikler</a>
+            <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+            <a href="terms.html" data-i18n="nav_terms">Koşullar</a>
+            <a href="mailto:wikiverseapp@gmail.com" data-i18n="nav_support">Destek</a>
+          </nav>
+
+          <div class="language-switch" aria-label="Language selector">
+            <button class="lang-btn active" type="button" data-lang="tr">TR</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -797,89 +585,58 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="hero-wrap">
-          <div class="hero-copy">
-            <div>
-              <div class="pill">
-                <span class="pill-dot"></span>
-                Bilgiyi daha sakin keşfet
-              </div>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow" data-i18n="hero_eyebrow">Wikiverse</div>
 
-              <h1>Wikipedia için daha rafine bir keşif deneyimi.</h1>
+            <h1 data-i18n="hero_title">
+              Bilgiyi daha sakin keşfet.
+            </h1>
 
-              <p class="lead">
-                Wikiverse; Wikipedia içeriklerini keşfetmeyi, okumayı ve daha sonra
-                geri dönmek üzere kaydetmeyi sade, odaklı ve modern bir deneyime dönüştürür.
-              </p>
+            <p class="lead" data-i18n="hero_lead">
+              Wikiverse, Wikipedia içeriklerini daha sade, odaklı ve geri dönülebilir
+              bir deneyimle keşfetmeniz için tasarlandı.
+            </p>
 
-              <div class="actions">
-                <a class="button primary" href="privacy.html">Gizlilik Politikasını Gör</a>
-                <a class="button secondary" href="terms.html">Kullanım Koşulları</a>
-              </div>
-
-              <p class="hero-note">
-                Resmi destek ve yasal bilgilendirme sayfası. Sorularınız için
-                wikiverseapp@gmail.com adresinden iletişime geçebilirsiniz.
-              </p>
-            </div>
-
-            <div class="stat-row" aria-label="Wikiverse öne çıkanlar">
-              <div class="stat">
-                <strong>Keşfet</strong>
-                <span>İlginizi çekebilecek içerikleri daha düzenli bir akışta görün.</span>
-              </div>
-              <div class="stat">
-                <strong>Kaydet</strong>
-                <span>Sonra okumak istediğiniz içeriklere kolayca geri dönün.</span>
-              </div>
-              <div class="stat">
-                <strong>Odaklan</strong>
-                <span>Daha temiz, daha sakin ve daha az dikkat dağıtan bir okuma hissi.</span>
-              </div>
+            <div class="hero-actions">
+              <a class="button primary" href="privacy.html" data-i18n="cta_privacy">
+                Gizlilik Politikası
+              </a>
+              <a class="button" href="terms.html" data-i18n="cta_terms">
+                Kullanım Koşulları
+              </a>
             </div>
           </div>
 
-          <aside class="visual" aria-label="Wikiverse uygulama önizlemesi">
-            <div class="phone">
-              <div class="phone-top">
-                <span>Wikiverse</span>
-                <span>Today</span>
+          <aside class="hero-card" aria-label="Wikiverse summary">
+            <div class="hero-card-top">
+              <span data-i18n="card_label_left">Official site</span>
+              <span>2026</span>
+            </div>
+
+            <h2 data-i18n="card_title">
+              Read less distracted.
+            </h2>
+
+            <p data-i18n="card_desc">
+              Daha temiz bir okuma yüzeyi, daha düzenli keşif ve daha sonra geri dönmek
+              istediğiniz içerikler için sade bir alan.
+            </p>
+
+            <div class="mini-list">
+              <div class="mini-item">
+                <strong data-i18n="mini_1_title">Discover</strong>
+                <span data-i18n="mini_1_desc">Curated flow</span>
               </div>
 
-              <div class="phone-title">
-                <span>Explore</span>
-                <h2>Curated knowledge.</h2>
+              <div class="mini-item">
+                <strong data-i18n="mini_2_title">Save</strong>
+                <span data-i18n="mini_2_desc">Return later</span>
               </div>
 
-              <div class="search-card">
-                Araştır, keşfet veya sonra okumak için kaydet
-              </div>
-
-              <div class="article-stack">
-                <article class="article">
-                  <small>FEATURED ARTICLE</small>
-                  <strong>Human history through discoveries</strong>
-                  <p>Bilgiyi daha okunabilir, daha dingin ve daha kişisel bir yüzeyde takip edin.</p>
-                </article>
-
-                <article class="article">
-                  <small>SAVED</small>
-                  <strong>Return to what matters</strong>
-                  <p>İlginizi çeken içerikleri kaydedin ve daha sonra kolayca geri dönün.</p>
-                </article>
-
-                <article class="article">
-                  <small>PREMIUM</small>
-                  <strong>A cleaner reading layer</strong>
-                  <p>Daha sade ve odaklı bir ürün deneyimi için premium katmanı keşfedin.</p>
-                </article>
-              </div>
-
-              <div class="bottom-tabs" aria-hidden="true">
-                <div class="tab active">Explore</div>
-                <div class="tab">Search</div>
-                <div class="tab">Saved</div>
-                <div class="tab">Profile</div>
+              <div class="mini-item">
+                <strong data-i18n="mini_3_title">Premium</strong>
+                <span data-i18n="mini_3_desc">Cleaner experience</span>
               </div>
             </div>
           </aside>
@@ -890,36 +647,38 @@
     <section class="section" id="features">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Experience</div>
-          <h2>Daha az gürültü. Daha net bilgi.</h2>
-          <p class="section-desc">
-            Wikiverse, klasik bilgi arama deneyimini daha sakin bir keşif ve okuma
-            akışına dönüştürmek için tasarlandı.
+          <h2 data-i18n="features_title">
+            Sade bir bilgi deneyimi.
+          </h2>
+
+          <p class="section-desc" data-i18n="features_desc">
+            Wikiverse; içerik keşfi, kaydetme ve okuma deneyimini daha az gürültülü,
+            daha anlaşılır ve daha düzenli hale getirir.
           </p>
         </div>
 
-        <div class="feature-grid">
+        <div class="features">
           <article class="feature">
-            <div class="feature-number">01</div>
-            <h3>Daha sade keşif akışı</h3>
-            <p>
-              İçeriklere dağınık bir yapı yerine daha temiz ve seçilebilir bir yüzeyden ulaşın.
+            <small>01</small>
+            <h3 data-i18n="feature_1_title">Daha temiz keşif</h3>
+            <p data-i18n="feature_1_desc">
+              Wikipedia içeriklerini daha sakin ve seçilebilir bir yüzeyde keşfedin.
             </p>
           </article>
 
           <article class="feature">
-            <div class="feature-number">02</div>
-            <h3>Geri dönülebilir içerikler</h3>
-            <p>
-              Sadece okumak değil, daha sonra tekrar bakmak istediğiniz bilgileri düzenli tutmak için.
+            <small>02</small>
+            <h3 data-i18n="feature_2_title">Kaydet ve geri dön</h3>
+            <p data-i18n="feature_2_desc">
+              Sonra okumak istediğiniz içerikleri düzenli bir şekilde saklayın.
             </p>
           </article>
 
           <article class="feature">
-            <div class="feature-number">03</div>
-            <h3>Premium kullanım katmanı</h3>
-            <p>
-              Daha rafine, daha odaklı ve daha temiz bir kullanım deneyimi için geliştirilmiş yapı.
+            <small>03</small>
+            <h3 data-i18n="feature_3_title">Premium deneyim</h3>
+            <p data-i18n="feature_3_desc">
+              Daha odaklı, daha rafine ve daha temiz bir kullanım katmanı.
             </p>
           </article>
         </div>
@@ -928,47 +687,55 @@
 
     <section class="legal">
       <div class="container">
-        <div class="legal-panel">
-          <div class="legal-copy">
-            <div class="kicker">Transparency</div>
-            <h2>Gizlilik ve kullanım bilgileri.</h2>
-            <p>
-              Wikiverse’in veri işleme yaklaşımı, premium erişim koşulları ve uygulama
-              kullanım çerçevesi hakkında gerekli bilgilere buradan ulaşabilirsiniz.
+        <div class="section-head">
+          <h2 data-i18n="legal_title">
+            Yasal bilgiler ve destek.
+          </h2>
+
+          <p class="section-desc" data-i18n="legal_desc">
+            Gizlilik, kullanım koşulları ve destek bilgilerine bu resmi sayfadan ulaşabilirsiniz.
+          </p>
+        </div>
+
+        <div class="legal-grid">
+          <a class="legal-card" href="privacy.html">
+            <div class="legal-card-top">
+              <strong data-i18n="privacy_title">Gizlilik Politikası</strong>
+              <span class="arrow">→</span>
+            </div>
+            <p data-i18n="privacy_desc">
+              Verilerin nasıl işlendiği ve hangi servislerin kullanılabileceği hakkında bilgi alın.
             </p>
-          </div>
+          </a>
 
-          <div class="legal-links">
-            <a class="legal-card" href="privacy.html">
-              <div>
-                <strong>Gizlilik Politikası</strong>
-                <span>
-                  Verilerin nasıl işlendiğini, hangi servislerin kullanılabileceğini
-                  ve gizlilik yaklaşımımızı inceleyin.
-                </span>
-              </div>
-              <div class="arrow">→</div>
-            </a>
+          <a class="legal-card" href="terms.html">
+            <div class="legal-card-top">
+              <strong data-i18n="terms_title">Kullanım Koşulları</strong>
+              <span class="arrow">→</span>
+            </div>
+            <p data-i18n="terms_desc">
+              Uygulama kullanımı, premium erişim ve satın alma koşullarını inceleyin.
+            </p>
+          </a>
 
-            <a class="legal-card" href="terms.html">
-              <div>
-                <strong>Kullanım Koşulları</strong>
-                <span>
-                  Uygulama kullanımı, premium erişim ve satın alma koşulları hakkında bilgi alın.
-                </span>
-              </div>
-              <div class="arrow">→</div>
-            </a>
+          <a class="legal-card" href="mailto:wikiverseapp@gmail.com">
+            <div class="legal-card-top">
+              <strong data-i18n="support_title">Destek</strong>
+              <span class="arrow">→</span>
+            </div>
+            <p data-i18n="support_desc">
+              Uygulama, abonelik veya hesap konularında bizimle iletişime geçin.
+            </p>
+          </a>
 
-            <a class="legal-card" href="mailto:wikiverseapp@gmail.com">
-              <div>
-                <strong>Destek ve İletişim</strong>
-                <span>
-                  Uygulama, abonelik veya hesap konularında bizimle iletişime geçin.
-                </span>
-              </div>
-              <div class="arrow">→</div>
-            </a>
+          <div class="legal-card">
+            <div class="legal-card-top">
+              <strong data-i18n="app_title">Wikiverse App</strong>
+              <span class="arrow">•</span>
+            </div>
+            <p data-i18n="app_desc">
+              Wikiverse, Wikipedia içeriklerini keşfetmek ve kaydetmek için geliştirilmiş bağımsız bir uygulamadır.
+            </p>
           </div>
         </div>
       </div>
@@ -978,15 +745,188 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div>© 2026 Wikiverse. Tüm hakları saklıdır.</div>
+        <div data-i18n="footer_copy">© 2026 Wikiverse. Tüm hakları saklıdır.</div>
 
         <div class="footer-links">
-          <a href="privacy.html">Gizlilik</a>
-          <a href="terms.html">Kullanım Koşulları</a>
-          <a href="mailto:wikiverseapp@gmail.com">İletişim</a>
+          <a href="privacy.html" data-i18n="footer_privacy">Gizlilik</a>
+          <a href="terms.html" data-i18n="footer_terms">Koşullar</a>
+          <a href="mailto:wikiverseapp@gmail.com" data-i18n="footer_contact">İletişim</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      tr: {
+        brand_subtitle: "Wikipedia, refined",
+
+        nav_features: "Özellikler",
+        nav_privacy: "Gizlilik",
+        nav_terms: "Koşullar",
+        nav_support: "Destek",
+
+        hero_eyebrow: "Wikiverse",
+        hero_title: "Bilgiyi daha sakin keşfet.",
+        hero_lead:
+          "Wikiverse, Wikipedia içeriklerini daha sade, odaklı ve geri dönülebilir bir deneyimle keşfetmeniz için tasarlandı.",
+
+        cta_privacy: "Gizlilik Politikası",
+        cta_terms: "Kullanım Koşulları",
+
+        card_label_left: "Official site",
+        card_title: "Read less distracted.",
+        card_desc:
+          "Daha temiz bir okuma yüzeyi, daha düzenli keşif ve daha sonra geri dönmek istediğiniz içerikler için sade bir alan.",
+
+        mini_1_title: "Discover",
+        mini_1_desc: "Curated flow",
+        mini_2_title: "Save",
+        mini_2_desc: "Return later",
+        mini_3_title: "Premium",
+        mini_3_desc: "Cleaner experience",
+
+        features_title: "Sade bir bilgi deneyimi.",
+        features_desc:
+          "Wikiverse; içerik keşfi, kaydetme ve okuma deneyimini daha az gürültülü, daha anlaşılır ve daha düzenli hale getirir.",
+
+        feature_1_title: "Daha temiz keşif",
+        feature_1_desc:
+          "Wikipedia içeriklerini daha sakin ve seçilebilir bir yüzeyde keşfedin.",
+        feature_2_title: "Kaydet ve geri dön",
+        feature_2_desc:
+          "Sonra okumak istediğiniz içerikleri düzenli bir şekilde saklayın.",
+        feature_3_title: "Premium deneyim",
+        feature_3_desc:
+          "Daha odaklı, daha rafine ve daha temiz bir kullanım katmanı.",
+
+        legal_title: "Yasal bilgiler ve destek.",
+        legal_desc:
+          "Gizlilik, kullanım koşulları ve destek bilgilerine bu resmi sayfadan ulaşabilirsiniz.",
+
+        privacy_title: "Gizlilik Politikası",
+        privacy_desc:
+          "Verilerin nasıl işlendiği ve hangi servislerin kullanılabileceği hakkında bilgi alın.",
+
+        terms_title: "Kullanım Koşulları",
+        terms_desc:
+          "Uygulama kullanımı, premium erişim ve satın alma koşullarını inceleyin.",
+
+        support_title: "Destek",
+        support_desc:
+          "Uygulama, abonelik veya hesap konularında bizimle iletişime geçin.",
+
+        app_title: "Wikiverse App",
+        app_desc:
+          "Wikiverse, Wikipedia içeriklerini keşfetmek ve kaydetmek için geliştirilmiş bağımsız bir uygulamadır.",
+
+        footer_copy: "© 2026 Wikiverse. Tüm hakları saklıdır.",
+        footer_privacy: "Gizlilik",
+        footer_terms: "Koşullar",
+        footer_contact: "İletişim"
+      },
+
+      en: {
+        brand_subtitle: "Wikipedia, refined",
+
+        nav_features: "Features",
+        nav_privacy: "Privacy",
+        nav_terms: "Terms",
+        nav_support: "Support",
+
+        hero_eyebrow: "Wikiverse",
+        hero_title: "Explore knowledge with less noise.",
+        hero_lead:
+          "Wikiverse is designed to make discovering, reading and saving Wikipedia content feel calmer, cleaner and easier to return to.",
+
+        cta_privacy: "Privacy Policy",
+        cta_terms: "Terms of Use",
+
+        card_label_left: "Official site",
+        card_title: "Read less distracted.",
+        card_desc:
+          "A cleaner reading surface, a more organized discovery flow and a simple place for content you want to revisit later.",
+
+        mini_1_title: "Discover",
+        mini_1_desc: "Curated flow",
+        mini_2_title: "Save",
+        mini_2_desc: "Return later",
+        mini_3_title: "Premium",
+        mini_3_desc: "Cleaner experience",
+
+        features_title: "A simpler knowledge experience.",
+        features_desc:
+          "Wikiverse makes discovering, saving and reading content feel less noisy, more understandable and more organized.",
+
+        feature_1_title: "Cleaner discovery",
+        feature_1_desc:
+          "Explore Wikipedia content through a calmer and more selective surface.",
+        feature_2_title: "Save and return",
+        feature_2_desc:
+          "Keep the articles you want to read later in a more organized place.",
+        feature_3_title: "Premium experience",
+        feature_3_desc:
+          "A more focused, refined and cleaner layer of the product.",
+
+        legal_title: "Legal information and support.",
+        legal_desc:
+          "Access privacy, terms and support information from this official page.",
+
+        privacy_title: "Privacy Policy",
+        privacy_desc:
+          "Learn how data may be processed and which services may be used.",
+
+        terms_title: "Terms of Use",
+        terms_desc:
+          "Review app usage, premium access and purchase conditions.",
+
+        support_title: "Support",
+        support_desc:
+          "Contact us about the app, subscriptions or account-related questions.",
+
+        app_title: "Wikiverse App",
+        app_desc:
+          "Wikiverse is an independent app designed for discovering and saving Wikipedia content.",
+
+        footer_copy: "© 2026 Wikiverse. All rights reserved.",
+        footer_privacy: "Privacy",
+        footer_terms: "Terms",
+        footer_contact: "Contact"
+      }
+    };
+
+    const buttons = document.querySelectorAll(".lang-btn");
+    const translatableElements = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.tr;
+
+      document.documentElement.lang = lang;
+
+      translatableElements.forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+
+      localStorage.setItem("wikiverse_language", lang);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.lang);
+      });
+    });
+
+    const savedLanguage = localStorage.getItem("wikiverse_language");
+    const browserLanguage = navigator.language && navigator.language.startsWith("tr") ? "tr" : "en";
+
+    setLanguage(savedLanguage || browserLanguage);
+  </script>
 </body>
 </html>
