@@ -1,1 +1,505 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wikiverse</title>
+  <meta name="description" content="Wikiverse ile keşfet, oku, kaydet ve bilgiyi daha akıcı deneyimle." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050816;
+      --bg-soft: #0b1022;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-strong: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: rgba(255, 255, 255, 0.95);
+      --muted: rgba(255, 255, 255, 0.68);
+      --brand: #7aa2ff;
+      --brand-strong: #a9c2ff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1120px;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(122, 162, 255, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 24%),
+        linear-gradient(180deg, #060913 0%, #050816 40%, #03060f 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 8, 22, 0.62);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      font-size: 1.15rem;
+    }
+
+    .brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(122,162,255,0.28), rgba(122,162,255,0.12));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .card,
+    .footer-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-copy {
+      border-radius: var(--radius-xl);
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--brand-strong);
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy p {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 56ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(180deg, rgba(122,162,255,0.35), rgba(122,162,255,0.16));
+      color: #fff;
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+      align-content: center;
+    }
+
+    .mini-card {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-label {
+      color: var(--brand-strong);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .mini-title {
+      margin-top: 8px;
+      font-size: 1.18rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .mini-text {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 48ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 10px 0 8px;
+      font-size: 1.18rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--brand-strong);
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 38px 0 64px;
+    }
+
+    .footer-panel {
+      border-radius: var(--radius-xl);
+      padding: 26px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      max-width: 44ch;
+    }
+
+    .footer-copy h3 {
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+      letter-spacing: -0.03em;
+    }
+
+    .footer-copy p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.48);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .footer-panel {
+        padding: 24px;
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.92rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap,
+      .nav-inner {
+        width: min(var(--max), calc(100% - 20px));
+      }
+
+      .hero-copy {
+        padding: 22px;
+      }
+
+      .hero-panel,
+      .card,
+      .footer-panel {
+        padding: 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="https://wikiverseapp.github.io/">
+        <span class="brand-badge">W</span>
+        <span>Wikiverse</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Özellikler</a>
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+        <a href="mailto:wikiverseapp@gmail.com">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Bilgiyi daha akıcı keşfet</div>
+          <h1>Oku, kaydet, geri dön ve bağlantıları daha kolay takip et.</h1>
+          <p>
+            Wikiverse; içerik keşfi, düzenli okuma, çevrimdışı erişim ve premium
+            deneyimle bilgi akışını daha sade ve daha akıcı hale getirmek için tasarlandı.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="privacy.html">Gizlilik Politikası</a>
+            <a class="button secondary" href="terms.html">Kullanım Koşulları</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="mini-card">
+            <div class="mini-label">Keşfet</div>
+            <div class="mini-title">İlgini çeken içeriklere daha hızlı ulaş</div>
+            <div class="mini-text">
+              Daha sakin bir okuma deneyimi için içerikleri düzenle, kaydet ve daha sonra tekrar dön.
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">Premium</div>
+            <div class="mini-title">Daha temiz ve odaklı deneyim</div>
+            <div class="mini-text">
+              Reklamsız kullanım, gelişmiş özellikler ve daha akıcı bir ürün deneyimi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Wikiverse ile neler mümkün?</h2>
+          </div>
+          <p>
+            Uygulama deneyimini daha düzenli, daha hızlı ve daha kişisel hale getiren temel yapı taşları.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon-box">01</div>
+            <h3>Keşfet ve Oku</h3>
+            <p>İçerikler arasında daha akıcı gezin, ilgini çeken başlıklara daha hızlı ulaş.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box">02</div>
+            <h3>Kaydet ve Düzenle</h3>
+            <p>Makale ve içerikleri daha sonra dönmek üzere sakla, okuma akışını kendine göre toparla.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box">03</div>
+            <h3>Premium Deneyim</h3>
+            <p>Gelişmiş özelliklerle daha temiz, daha odaklı ve daha akıcı bir kullanım deneyimi elde et.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-panel">
+        <div class="footer-top">
+          <div class="footer-copy">
+            <h3>Wikiverse</h3>
+            <p>
+              Bilgiyi daha rahat keşfetmek, takip etmek ve geri dönmek için tasarlanmış sade bir deneyim.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <a href="privacy.html">Gizlilik</a>
+            <a href="terms.html">Kullanım Koşulları</a>
+            <a href="mailto:wikiverseapp@gmail.com">İletişim</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 Wikiverse. Tüm hakları saklıdır.
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
