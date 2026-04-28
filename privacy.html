@@ -3,394 +3,950 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wikiverse Gizlilik Politikası / Privacy Policy</title>
+
+  <title>Privacy Policy | Wikiverse</title>
+  <meta
+    name="description"
+    content="Wikiverse gizlilik politikası. Verilerin nasıl işlendiği, kullanılan servisler ve kullanıcı hakları hakkında bilgi."
+  />
+
   <style>
-    :root { color-scheme: light dark; }
+    :root {
+      color-scheme: dark;
+
+      --bg: #0b0b0a;
+      --paper: #efede6;
+
+      --text: #f1efe8;
+      --muted: rgba(241, 239, 232, 0.64);
+      --faint: rgba(241, 239, 232, 0.38);
+
+      --dark-text: #171715;
+      --dark-muted: rgba(23, 23, 21, 0.62);
+
+      --line: rgba(239, 237, 230, 0.1);
+      --line-strong: rgba(239, 237, 230, 0.18);
+
+      --surface: rgba(239, 237, 230, 0.055);
+      --surface-hover: rgba(239, 237, 230, 0.08);
+
+      --stone: #b8b2a6;
+      --blue: #a9b4c6;
+
+      --max: 1100px;
+      --content: 780px;
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 40px 20px 64px;
-      line-height: 1.7;
-      color: #111827;
-      background: #ffffff;
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -14%, rgba(239, 237, 230, 0.12), transparent 31%),
+        radial-gradient(circle at 100% 18%, rgba(169, 180, 198, 0.075), transparent 24%),
+        linear-gradient(180deg, #0f0f0e 0%, #0b0b0a 48%, #070707 100%);
+      letter-spacing: -0.015em;
     }
-    h1, h2, h3 { color: #0f172a; line-height: 1.2; }
-    h1 { font-size: 32px; margin-bottom: 8px; }
-    h2 { margin-top: 36px; font-size: 24px; }
-    h3 { margin-top: 22px; font-size: 18px; }
-    p, li { font-size: 16px; }
-    .muted { color: #6b7280; }
-    .card {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-top: 20px;
-    }
-    hr {
-      border: 0;
-      border-top: 1px solid #e5e7eb;
-      margin: 40px 0;
-    }
-    a { color: #2563eb; }
-    @media (prefers-color-scheme: dark) {
-      body { color: #e5e7eb; background: #020617; }
-      h1, h2, h3 { color: #f8fafc; }
-      .muted { color: #94a3b8; }
-      .card { background: #0f172a; border-color: #1e293b; }
-      hr { border-top-color: #1e293b; }
-      a { color: #93c5fd; }
-    }
-  </style>
-</head>
-<body>
-  <h1>Gizlilik Politikası</h1>
-  <p class="muted">Son güncelleme: 28 Nisan 2026</p>
 
-  <div class="card">
-    <p>
-      Bu sayfa, Wikiverse uygulamasının hangi verileri işleyebileceğini,
-      bu verileri nasıl kullanabileceğini ve haklarınızı açıklar.
-    </p>
-  </div>
-
-  <h2>Giriş</h2>
-  <p>
-    Wikiverse; makale keşfi, okuma, kaydetme, çevrimdışı erişim ve premium
-    özellikler sunan bir içerik uygulamasıdır. Bazı özellikler için cihaz
-    izinleri veya üçüncü taraf servisler gerekebilir.
-  </p>
-
-  <h2>İşleyebileceğimiz veriler</h2>
-
-  <h3>Uygulama kullanım verileri</h3>
-  <p>
-    Uygulamanın hangi ekranlarının kullanıldığı, hangi özelliklerin daha sık
-    tercih edildiği ve uygulamanın nasıl performans gösterdiği gibi sınırlı
-    analiz verileri işlenebilir.
-  </p>
-
-  <h3>Teknik hata ve performans verileri</h3>
-  <p>
-    Çökme kayıtları, hata günlükleri, cihaz modeli, işletim sistemi sürümü ve
-    uygulama sürümü gibi teknik bilgiler; sorunları teşhis etmek ve uygulamayı
-    iyileştirmek amacıyla işlenebilir.
-  </p>
-
-  <h3>Satın alma ve abonelik bilgileri</h3>
-  <p>
-    Premium üyelik, satın alma ve geri yükleme işlemlerini desteklemek için
-    abonelik durumuna ilişkin bilgiler işlenebilir. Ödeme bilgileriniz doğrudan
-    Wikiverse tarafından saklanmaz.
-  </p>
-
-  <h3>Reklam verileri ve tanımlayıcılar</h3>
-  <p>
-    Uygulamada reklam gösterimi bulunabilir. Reklamların sunumu ve ölçümü için
-    üçüncü taraf reklam servisleri bazı cihaz tanımlayıcılarını veya ölçüm
-    sinyallerini işleyebilir.
-  </p>
-
-  <h3>Yerel olarak saklanan tercihler</h3>
-  <p>
-    Kaydedilen içerikler, çevrimdışı içerikler, bazı kullanıcı tercihleri ve
-    arayüz ayarları cihazınızda yerel olarak saklanabilir.
-  </p>
-
-  <h2>Verileri hangi amaçlarla kullanırız?</h2>
-  <ul>
-    <li>Uygulama özelliklerini sağlamak ve geliştirmek</li>
-    <li>Hataları tespit etmek ve performansı iyileştirmek</li>
-    <li>Premium satın alma / geri yükleme akışlarını desteklemek</li>
-    <li>Reklamları sunmak ve ölçmek</li>
-    <li>İçerik deneyimini ve kullanıcı arayüzünü iyileştirmek</li>
-  </ul>
-
-  <h2>Üçüncü taraf hizmetler</h2>
-  <p>Wikiverse, bazı özellikleri sağlamak için üçüncü taraf hizmetlerden yararlanabilir:</p>
-  <ul>
-    <li>Firebase (analiz, uzaktan yapılandırma, teknik izleme)</li>
-    <li>RevenueCat (abonelik ve satın alma yönetimi)</li>
-    <li>Google AdMob (reklamlar)</li>
-    <li>Apple App Store / Google Play (ödeme ve abonelik işlemleri)</li>
-    <li>Wikipedia / Wikimedia altyapısı ve ilişkili içerik servisleri</li>
-  </ul>
-
-  <p>
-    Bu hizmetlerle iletişim sırasında ilgili sağlayıcılar standart sunucu
-    kayıtlarında bazı bilgileri işleyebilir.
-  </p>
-
-  <h2>Veri paylaşımı</h2>
-  <p>
-    Verilerinizi satmayız. Verileri yalnızca hizmeti sunmak için gerekli olduğunda,
-    yasal yükümlülükler kapsamında veya güvenlik ve hizmet devamlılığı amaçlarıyla
-    hizmet sağlayıcılarımız aracılığıyla paylaşabiliriz.
-  </p>
-
-  <h2>Saklama</h2>
-  <p>
-    Veriler yalnızca bu politikada belirtilen amaçlar için gerekli olduğu süre
-    boyunca saklanır. Bazı tercihler ve çevrimdışı kayıtlar cihazınızda yerel
-    olarak tutulabilir.
-  </p>
-
-  <h2>Kullanıcı hakları ve seçenekler</h2>
-  <ul>
-    <li>Uygulama ve cihaz ayarları üzerinden bazı tercihlerinizi yönetebilirsiniz.</li>
-    <li>Satın alma ve abonelik yönetimini ilgili mağaza hesabınızdan yapabilirsiniz.</li>
-    <li>Sorularınız veya talepleriniz için bizimle e-posta üzerinden iletişime geçebilirsiniz.</li>
-  </ul>
-
-  <h2>Çocukların gizliliği</h2>
-  <p>
-    Wikiverse çocukları özel olarak hedeflemez ve çocuklara ait kişisel verileri
-    bilerek toplamayı amaçlamaz.
-  </p>
-
-  <h2>Güvenlik</h2>
-  <p>
-    Verileri korumak için makul teknik ve organizasyonel önlemler uygularız.
-    Ancak internet üzerinden yapılan hiçbir iletimin yüzde yüz güvenli olduğu
-    garanti edilemez.
-  </p>
-
-  <h2>Değişiklikler</h2>
-  <p>
-    Bu politika zaman zaman güncellenebilir. Güncel sürüm her zaman bu sayfada
-    yayımlanır.
-  </p>
-
-  <h2>İletişim</h2>
-  <p>Sorularınız için: <a href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a></p>
-
-  <hr>
-
-  <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: April 28, 2026</p>
-
-  <div class="card">
-    <p>
-      This page explains what data Wikiverse may process, how it may be used,
-      and what rights you may have.
-    </p>
-  </div>
-
-  <h2>Introduction</h2>
-  <p>
-    Wikiverse is a content discovery and reading app that may offer saving,
-    offline access, and premium features. Some features may rely on device
-    permissions or third-party services.
-  </p>
-
-  <h2>Data We May Process</h2>
-
-  <h3>App usage data</h3>
-  <p>
-    We may process limited analytics data, such as which screens are used,
-    which features are accessed more often, and how the app performs.
-  </p>
-
-  <h3>Technical and crash data</h3>
-  <p>
-    Crash logs, diagnostic data, device model, OS version, and app version may
-    be processed to troubleshoot issues and improve the app.
-  </p>
-
-  <h3>Purchase and subscription data</h3>
-  <p>
-    We may process subscription status and related purchase information in order
-    to support premium access and restore flows. Payment details are not stored
-    directly by Wikiverse.
-  </p>
-
-  <h3>Advertising data and identifiers</h3>
-  <p>
-    The app may display ads. Third-party ad providers may process device
-    identifiers or measurement signals to serve and measure ads.
-  </p>
-
-  <h3>Locally stored preferences</h3>
-  <p>
-    Saved items, offline content, and certain user preferences may be stored
-    locally on your device.
-  </p>
-
-  <h2>How We Use Data</h2>
-  <ul>
-    <li>To provide and improve app features</li>
-    <li>To detect issues and improve performance</li>
-    <li>To support premium purchase and restore flows</li>
-    <li>To serve and measure ads</li>
-    <li>To improve content and interface experience</li>
-  </ul>
-
-  <h2>Third-Party Services</h2>
-  <p>Wikiverse may rely on services such as:</p>
-  <ul>
-    <li>Firebase (analytics, remote configuration, technical monitoring)</li>
-    <li>RevenueCat (subscription and purchase management)</li>
-    <li>Google AdMob (ads)</li>
-    <li>Apple App Store / Google Play (payments and subscriptions)</li>
-    <li>Wikipedia / Wikimedia infrastructure and related content services</li>
-  </ul>
-
-  <p>
-    Standard server-side logs may be processed by those providers during normal service communication.
-  </p>
-
-  <h2>Data Sharing</h2>
-  <p>
-    We do not sell your data. We may share data only when necessary to provide
-    the service, comply with legal obligations, or protect security and service continuity.
-  </p>
-
-  <h2>Data Retention</h2>
-  <p>
-    Data is retained only as long as necessary for the purposes described in
-    this policy. Some settings and offline data may remain stored locally on your device.
-  </p>
-
-  <h2>Your Rights and Choices</h2>
-  <ul>
-    <li>You can manage some preferences through the app and your device settings.</li>
-    <li>You can manage subscriptions through the relevant app store account.</li>
-    <li>You can contact us by email for questions or requests.</li>
-  </ul>
-
-  <h2>Children’s Privacy</h2>
-  <p>
-    Wikiverse does not specifically target children and does not knowingly collect children’s personal data.
-  </p>
-
-  <h2>Security</h2>
-  <p>
-    We apply reasonable technical and organizational safeguards, but no method
-    of transmission over the internet can be guaranteed to be fully secure.
-  </p>
-
-  <h2>Changes</h2>
-  <p>
-    We may update this policy from time to time. The current version will always
-    be published on this page.
-  </p>
-
-  <h2>Contact</h2>
-  <p><a href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a></p>
-</body>
-</html>    }
-    .card {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-top: 20px;
-    }
     a {
-      color: #2563eb;
+      color: inherit;
+      text-decoration: none;
     }
-    @media (prefers-color-scheme: dark) {
-      body {
-        color: #e5e7eb;
-        background: #020617;
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11, 11, 10, 0.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(239, 237, 230, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: var(--dark-text);
+      background: var(--paper);
+      font-weight: 760;
+      box-shadow:
+        inset 0 -1px 0 rgba(0,0,0,0.12),
+        0 12px 28px rgba(0,0,0,0.24);
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 3px;
+    }
+
+    .brand-copy strong {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-copy span {
+      color: var(--faint);
+      font-size: 0.77rem;
+      font-weight: 520;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 560;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .language-switch {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(239, 237, 230, 0.13);
+      background: rgba(239, 237, 230, 0.055);
+    }
+
+    .lang-btn {
+      height: 30px;
+      min-width: 38px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--faint);
+      font-size: 0.76rem;
+      font-weight: 720;
+    }
+
+    .lang-btn.active {
+      background: var(--paper);
+      color: var(--dark-text);
+    }
+
+    .page {
+      padding: 82px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 52px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: var(--stone);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 760;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      color: var(--paper);
+      font-size: clamp(3rem, 6.5vw, 6.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+      font-weight: 650;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.24vw, 1.1rem);
+      line-height: 1.78;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .meta-pill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(239, 237, 230, 0.055);
+      border: 1px solid rgba(239, 237, 230, 0.1);
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 96px;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      background: rgba(239, 237, 230, 0.048);
+      border: 1px solid rgba(239, 237, 230, 0.1);
+    }
+
+    .toc-title {
+      color: var(--faint);
+      font-size: 0.76rem;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    .toc nav {
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc a {
+      padding: 9px 10px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.35;
+      transition: 0.16s ease;
+    }
+
+    .toc a:hover {
+      color: var(--text);
+      background: rgba(239, 237, 230, 0.055);
+    }
+
+    .content {
+      display: grid;
+      gap: 14px;
+    }
+
+    .notice {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      color: var(--dark-text);
+    }
+
+    .notice strong {
+      display: block;
+      font-size: 1.02rem;
+      letter-spacing: -0.03em;
+    }
+
+    .notice p {
+      margin: 10px 0 0;
+      color: var(--dark-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .policy-card {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(239,237,230,0.07), rgba(239,237,230,0.043));
+      border: 1px solid rgba(239,237,230,0.105);
+    }
+
+    .policy-card h2 {
+      margin: 0;
+      color: var(--paper);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      font-weight: 660;
+    }
+
+    .policy-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.76;
+      font-size: 0.98rem;
+    }
+
+    .policy-card ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .policy-card li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.66;
+      font-size: 0.96rem;
+    }
+
+    .policy-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--stone);
+    }
+
+    .inline-link {
+      color: var(--paper);
+      border-bottom: 1px solid rgba(239,237,230,0.34);
+    }
+
+    .inline-link:hover {
+      border-color: var(--paper);
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(239,237,230,0.055);
+      border: 1px solid rgba(239,237,230,0.12);
+    }
+
+    .contact-panel strong {
+      display: block;
+      color: var(--paper);
+      font-size: 1.1rem;
+      letter-spacing: -0.035em;
+    }
+
+    .contact-panel span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .button {
+      min-height: 48px;
+      padding: 0 17px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: var(--paper);
+      color: var(--dark-text);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: 0.18s ease;
+    }
+
+    .button:hover {
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .footer {
+      padding: 0 0 44px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(239,237,230,0.09);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--faint);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 940px) {
+      .page {
+        padding-top: 62px;
       }
-      h1, h2 {
-        color: #f8fafc;
+
+      .hero,
+      .layout {
+        grid-template-columns: 1fr;
       }
-      .muted {
-        color: #94a3b8;
+
+      .toc {
+        position: relative;
+        top: auto;
       }
-      .card {
-        background: #0f172a;
-        border-color: #1e293b;
+
+      .toc nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      a {
-        color: #93c5fd;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .page {
+        padding: 48px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 14vw, 4.6rem);
+      }
+
+      .toc nav {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card,
+      .notice,
+      .contact-panel {
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body>
-  <h1>Gizlilik Politikası</h1>
-  <p class="muted">Son güncelleme: 28 Nisan 2026</p>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Wikiverse">
+          <span class="mark">W</span>
+          <span class="brand-copy">
+            <strong>Wikiverse</strong>
+            <span data-i18n="brand_subtitle">Wikipedia, refined</span>
+          </span>
+        </a>
 
-  <div class="card">
-    <p>
-      Bu Gizlilik Politikası, Wikiverse uygulamasını kullanırken hangi verilerin
-      işlenebileceğini, bu verilerin hangi amaçlarla kullanılabileceğini ve
-      kullanıcıların sahip olduğu hakları açıklar.
-    </p>
-  </div>
+        <div class="nav-right">
+          <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html#features" data-i18n="nav_features">Özellikler</a>
+            <a href="privacy.html" class="active" data-i18n="nav_privacy">Gizlilik</a>
+            <a href="terms.html" data-i18n="nav_terms">Koşullar</a>
+            <a href="mailto:wikiverseapp@gmail.com" data-i18n="nav_support">Destek</a>
+          </nav>
 
-  <h2>1. Toplanan Veriler</h2>
-  <p>
-    Wikiverse, uygulamanın çalışması, performansının izlenmesi, hata takibi,
-    abonelik doğrulaması ve kullanıcı deneyiminin iyileştirilmesi amacıyla sınırlı
-    teknik veriler işleyebilir.
-  </p>
-  <ul>
-    <li>Uygulama kullanımına ilişkin temel analiz verileri</li>
-    <li>Çökme kayıtları ve hata teşhis bilgileri</li>
-    <li>Cihaz ve uygulama sürümüne ilişkin teknik bilgiler</li>
-    <li>Abonelik ve satın alma durumuna ilişkin bilgiler</li>
-  </ul>
+          <div class="language-switch" aria-label="Language selector">
+            <button class="lang-btn active" type="button" data-lang="tr">TR</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h2>2. Verilerin Kullanım Amaçları</h2>
-  <ul>
-    <li>Uygulamanın güvenli ve istikrarlı şekilde çalışmasını sağlamak</li>
-    <li>Hataları tespit etmek ve düzeltmek</li>
-    <li>Özellikleri geliştirmek ve kullanıcı deneyimini iyileştirmek</li>
-    <li>Premium abonelik durumunu doğrulamak</li>
-    <li>Reklam ve içerik deneyimini yönetmek</li>
-  </ul>
+  <main class="page">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <div class="eyebrow" data-i18n="eyebrow">Privacy Policy</div>
+          <h1 data-i18n="page_title">Gizlilik Politikası</h1>
+        </div>
 
-  <h2>3. Üçüncü Taraf Hizmetler</h2>
-  <p>Wikiverse aşağıdaki üçüncü taraf servisleri kullanabilir:</p>
-  <ul>
-    <li><strong>Firebase</strong> — analiz, uzaktan yapılandırma ve teknik izleme</li>
-    <li><strong>RevenueCat</strong> — abonelik ve satın alma yönetimi</li>
-    <li><strong>Google AdMob</strong> — reklam gösterimi</li>
-    <li><strong>Apple App Store / Google Play</strong> — ödeme ve abonelik işlemleri</li>
-  </ul>
+        <div class="hero-copy">
+          <p data-i18n="page_intro">
+            Bu politika, Wikiverse uygulamasını kullanırken hangi bilgilerin işlenebileceğini,
+            bu bilgilerin hangi amaçlarla kullanılabileceğini ve gizlilik tercihlerinizi açıklar.
+          </p>
 
-  <h2>4. Satın Almalar ve Abonelikler</h2>
-  <p>
-    Premium abonelikler ve uygulama içi satın almalar Apple App Store veya Google Play
-    üzerinden gerçekleştirilir. Ödeme bilgileriniz Wikiverse tarafından doğrudan
-    saklanmaz; ilgili mağaza altyapıları üzerinden işlenir.
-  </p>
+          <div class="meta-row">
+            <span class="meta-pill" data-i18n="effective_date">Yürürlük tarihi: 28 Nisan 2026</span>
+            <span class="meta-pill" data-i18n="app_name">Wikiverse App</span>
+          </div>
+        </div>
+      </section>
 
-  <h2>5. Veri Saklama</h2>
-  <p>
-    Veriler yalnızca gerekli olduğu süre boyunca ve ilgili hizmetin amacıyla sınırlı
-    olarak saklanır. Teknik hata kayıtları ve analiz verileri, hizmet kalitesini
-    artırmak amacıyla makul sürelerle tutulabilir.
-  </p>
+      <div class="layout">
+        <aside class="toc" aria-label="Privacy policy sections">
+          <div class="toc-title" data-i18n="toc_title">İçindekiler</div>
+          <nav>
+            <a href="#overview" data-i18n="toc_overview">Genel Bakış</a>
+            <a href="#data" data-i18n="toc_data">Toplanan Bilgiler</a>
+            <a href="#usage" data-i18n="toc_usage">Kullanım Amaçları</a>
+            <a href="#services" data-i18n="toc_services">Üçüncü Taraf Servisler</a>
+            <a href="#purchases" data-i18n="toc_purchases">Satın Almalar</a>
+            <a href="#rights" data-i18n="toc_rights">Haklarınız</a>
+            <a href="#children" data-i18n="toc_children">Çocukların Gizliliği</a>
+            <a href="#contact" data-i18n="toc_contact">İletişim</a>
+          </nav>
+        </aside>
 
-  <h2>6. Kullanıcı Hakları</h2>
-  <p>
-    Bulunduğunuz ülkenin mevzuatına bağlı olarak, kişisel verilerinize erişim,
-    düzeltme veya silme talebinde bulunma hakkına sahip olabilirsiniz.
-  </p>
+        <div class="content">
+          <section class="notice">
+            <strong data-i18n="notice_title">Kısa özet</strong>
+            <p data-i18n="notice_text">
+              Wikiverse, deneyimi iyileştirmek, uygulama performansını anlamak ve premium
+              erişimi yönetmek için sınırlı teknik veriler işleyebilir. Doğrudan kimlik
+              bilgisi talep etmeyiz; ancak kullanılan servisler cihaz, kullanım ve satın alma
+              durumuna ilişkin teknik veriler işleyebilir.
+            </p>
+          </section>
 
-  <h2>7. Çocukların Gizliliği</h2>
-  <p>
-    Wikiverse bilerek çocuklardan hassas kişisel veri toplamaz. Böyle bir durumun
-    fark edilmesi halinde ilgili veriler makul süre içinde silinir.
-  </p>
+          <section class="policy-card" id="overview">
+            <h2 data-i18n="overview_title">1. Genel Bakış</h2>
+            <p data-i18n="overview_text">
+              Wikiverse, Wikipedia içeriklerini keşfetmek, okumak ve kaydetmek için geliştirilmiş
+              bağımsız bir uygulamadır. Bu Gizlilik Politikası, uygulama ve ilgili destek
+              sayfaları üzerinden işlenebilecek bilgiler hakkında kullanıcıları bilgilendirmek
+              amacıyla hazırlanmıştır.
+            </p>
+          </section>
 
-  <h2>8. Bu Politikanın Güncellenmesi</h2>
-  <p>
-    Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncel sürüm her zaman bu
-    sayfada yayımlanır.
-  </p>
+          <section class="policy-card" id="data">
+            <h2 data-i18n="data_title">2. Toplanabilecek Bilgiler</h2>
+            <p data-i18n="data_intro">
+              Wikiverse’i kullanırken aşağıdaki türde bilgiler işlenebilir:
+            </p>
+            <ul>
+              <li data-i18n="data_1">Uygulama performansı, çökme raporları ve hata günlükleri gibi teknik bilgiler.</li>
+              <li data-i18n="data_2">Uygulama içindeki genel kullanım etkileşimleri ve özellik kullanım verileri.</li>
+              <li data-i18n="data_3">Premium erişim, abonelik veya satın alma durumunu doğrulamak için gerekli işlem bilgileri.</li>
+              <li data-i18n="data_4">Bildirim tercihleri veya cihaz bildirimiyle ilişkili teknik tanımlayıcılar.</li>
+              <li data-i18n="data_5">Destek için bizimle iletişime geçtiğinizde paylaştığınız e-posta adresi ve mesaj içeriği.</li>
+            </ul>
+          </section>
 
-  <h2>9. İletişim</h2>
-  <p>
-    Gizlilik politikasıyla ilgili sorular için bizimle şu e-posta adresi üzerinden
-    iletişime geçebilirsiniz:
-  </p>
-  <p><a href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a></p>
+          <section class="policy-card" id="usage">
+            <h2 data-i18n="usage_title">3. Bilgilerin Kullanım Amaçları</h2>
+            <p data-i18n="usage_intro">
+              İşlenen bilgiler aşağıdaki amaçlarla kullanılabilir:
+            </p>
+            <ul>
+              <li data-i18n="usage_1">Uygulamanın güvenli, kararlı ve doğru çalışmasını sağlamak.</li>
+              <li data-i18n="usage_2">Hataları tespit etmek, performansı ölçmek ve kullanıcı deneyimini iyileştirmek.</li>
+              <li data-i18n="usage_3">Premium erişim, abonelik ve satın alma durumunu yönetmek.</li>
+              <li data-i18n="usage_4">Kullanıcı taleplerine destek sağlamak.</li>
+              <li data-i18n="usage_5">Yasal yükümlülüklere ve platform gerekliliklerine uyum sağlamak.</li>
+            </ul>
+          </section>
+
+          <section class="policy-card" id="services">
+            <h2 data-i18n="services_title">4. Üçüncü Taraf Servisler</h2>
+            <p data-i18n="services_text">
+              Wikiverse; analitik, hata izleme, bildirim, reklam, uygulama içi satın alma
+              veya premium erişim yönetimi gibi amaçlarla üçüncü taraf servislerden
+              yararlanabilir. Bu servisler kendi gizlilik politikaları doğrultusunda teknik
+              veriler işleyebilir.
+            </p>
+            <ul>
+              <li data-i18n="services_1">Apple App Store ve Google Play satın alma altyapıları.</li>
+              <li data-i18n="services_2">Premium erişim ve abonelik yönetimi servisleri.</li>
+              <li data-i18n="services_3">Analitik, hata raporlama ve performans ölçüm servisleri.</li>
+              <li data-i18n="services_4">Reklam veya bildirim altyapıları, uygulama yapılandırmasına bağlı olarak kullanılabilir.</li>
+            </ul>
+          </section>
+
+          <section class="policy-card" id="purchases">
+            <h2 data-i18n="purchases_title">5. Satın Almalar ve Abonelikler</h2>
+            <p data-i18n="purchases_text">
+              Uygulama içi satın almalar ve abonelikler, Apple App Store veya Google Play
+              tarafından işlenir. Wikiverse tam ödeme kartı bilgilerinize erişmez. Premium
+              erişimin doğrulanması için satın alma durumu, ürün kimliği ve işlemle ilişkili
+              teknik bilgiler işlenebilir.
+            </p>
+          </section>
+
+          <section class="policy-card" id="rights">
+            <h2 data-i18n="rights_title">6. Haklarınız ve Tercihleriniz</h2>
+            <p data-i18n="rights_intro">
+              Bulunduğunuz ülke veya bölgeye bağlı olarak kişisel verilerinizle ilgili belirli
+              haklara sahip olabilirsiniz.
+            </p>
+            <ul>
+              <li data-i18n="rights_1">Verileriniz hakkında bilgi talep edebilirsiniz.</li>
+              <li data-i18n="rights_2">Hatalı bilgilerin düzeltilmesini isteyebilirsiniz.</li>
+              <li data-i18n="rights_3">Uygun olduğu durumlarda silme veya işlemeyi sınırlandırma talebinde bulunabilirsiniz.</li>
+              <li data-i18n="rights_4">Bildirimleri cihaz ayarlarınızdan kapatabilirsiniz.</li>
+              <li data-i18n="rights_5">Aboneliklerinizi App Store veya Google Play hesap ayarlarınız üzerinden yönetebilirsiniz.</li>
+            </ul>
+          </section>
+
+          <section class="policy-card" id="children">
+            <h2 data-i18n="children_title">7. Çocukların Gizliliği</h2>
+            <p data-i18n="children_text">
+              Wikiverse, bilerek çocuklardan doğrudan kişisel bilgi toplamayı amaçlamaz.
+              Bir çocuğa ait kişisel bilginin uygunsuz şekilde işlendiğini düşünüyorsanız,
+              bizimle iletişime geçebilirsiniz.
+            </p>
+          </section>
+
+          <section class="policy-card">
+            <h2 data-i18n="security_title">8. Güvenlik ve Saklama</h2>
+            <p data-i18n="security_text">
+              Bilgilerin korunması için makul teknik ve idari önlemler alınır. Veriler,
+              işlenme amacının gerektirdiği süre boyunca veya yasal yükümlülükler kapsamında
+              gerekli olduğu sürece saklanabilir.
+            </p>
+          </section>
+
+          <section class="policy-card">
+            <h2 data-i18n="changes_title">9. Politika Değişiklikleri</h2>
+            <p data-i18n="changes_text">
+              Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişikliklerde,
+              uygun yöntemlerle bilgilendirme yapılabilir. Güncel sürüm bu sayfada yayımlanır.
+            </p>
+          </section>
+
+          <section class="contact-panel" id="contact">
+            <div>
+              <strong data-i18n="contact_title">İletişim</strong>
+              <span data-i18n="contact_text">
+                Gizlilik politikası veya verilerinizle ilgili sorularınız için bizimle iletişime geçebilirsiniz.
+              </span>
+            </div>
+
+            <a class="button" href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div data-i18n="footer_copy">© 2026 Wikiverse. Tüm hakları saklıdır.</div>
+
+        <div class="footer-links">
+          <a href="index.html" data-i18n="footer_home">Ana Sayfa</a>
+          <a href="privacy.html" data-i18n="footer_privacy">Gizlilik</a>
+          <a href="terms.html" data-i18n="footer_terms">Koşullar</a>
+          <a href="mailto:wikiverseapp@gmail.com" data-i18n="footer_contact">İletişim</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      tr: {
+        brand_subtitle: "Wikipedia, refined",
+
+        nav_features: "Özellikler",
+        nav_privacy: "Gizlilik",
+        nav_terms: "Koşullar",
+        nav_support: "Destek",
+
+        eyebrow: "Privacy Policy",
+        page_title: "Gizlilik Politikası",
+        page_intro:
+          "Bu politika, Wikiverse uygulamasını kullanırken hangi bilgilerin işlenebileceğini, bu bilgilerin hangi amaçlarla kullanılabileceğini ve gizlilik tercihlerinizi açıklar.",
+        effective_date: "Yürürlük tarihi: 28 Nisan 2026",
+        app_name: "Wikiverse App",
+
+        toc_title: "İçindekiler",
+        toc_overview: "Genel Bakış",
+        toc_data: "Toplanan Bilgiler",
+        toc_usage: "Kullanım Amaçları",
+        toc_services: "Üçüncü Taraf Servisler",
+        toc_purchases: "Satın Almalar",
+        toc_rights: "Haklarınız",
+        toc_children: "Çocukların Gizliliği",
+        toc_contact: "İletişim",
+
+        notice_title: "Kısa özet",
+        notice_text:
+          "Wikiverse, deneyimi iyileştirmek, uygulama performansını anlamak ve premium erişimi yönetmek için sınırlı teknik veriler işleyebilir. Doğrudan kimlik bilgisi talep etmeyiz; ancak kullanılan servisler cihaz, kullanım ve satın alma durumuna ilişkin teknik veriler işleyebilir.",
+
+        overview_title: "1. Genel Bakış",
+        overview_text:
+          "Wikiverse, Wikipedia içeriklerini keşfetmek, okumak ve kaydetmek için geliştirilmiş bağımsız bir uygulamadır. Bu Gizlilik Politikası, uygulama ve ilgili destek sayfaları üzerinden işlenebilecek bilgiler hakkında kullanıcıları bilgilendirmek amacıyla hazırlanmıştır.",
+
+        data_title: "2. Toplanabilecek Bilgiler",
+        data_intro: "Wikiverse’i kullanırken aşağıdaki türde bilgiler işlenebilir:",
+        data_1: "Uygulama performansı, çökme raporları ve hata günlükleri gibi teknik bilgiler.",
+        data_2: "Uygulama içindeki genel kullanım etkileşimleri ve özellik kullanım verileri.",
+        data_3: "Premium erişim, abonelik veya satın alma durumunu doğrulamak için gerekli işlem bilgileri.",
+        data_4: "Bildirim tercihleri veya cihaz bildirimiyle ilişkili teknik tanımlayıcılar.",
+        data_5: "Destek için bizimle iletişime geçtiğinizde paylaştığınız e-posta adresi ve mesaj içeriği.",
+
+        usage_title: "3. Bilgilerin Kullanım Amaçları",
+        usage_intro: "İşlenen bilgiler aşağıdaki amaçlarla kullanılabilir:",
+        usage_1: "Uygulamanın güvenli, kararlı ve doğru çalışmasını sağlamak.",
+        usage_2: "Hataları tespit etmek, performansı ölçmek ve kullanıcı deneyimini iyileştirmek.",
+        usage_3: "Premium erişim, abonelik ve satın alma durumunu yönetmek.",
+        usage_4: "Kullanıcı taleplerine destek sağlamak.",
+        usage_5: "Yasal yükümlülüklere ve platform gerekliliklerine uyum sağlamak.",
+
+        services_title: "4. Üçüncü Taraf Servisler",
+        services_text:
+          "Wikiverse; analitik, hata izleme, bildirim, reklam, uygulama içi satın alma veya premium erişim yönetimi gibi amaçlarla üçüncü taraf servislerden yararlanabilir. Bu servisler kendi gizlilik politikaları doğrultusunda teknik veriler işleyebilir.",
+        services_1: "Apple App Store ve Google Play satın alma altyapıları.",
+        services_2: "Premium erişim ve abonelik yönetimi servisleri.",
+        services_3: "Analitik, hata raporlama ve performans ölçüm servisleri.",
+        services_4: "Reklam veya bildirim altyapıları, uygulama yapılandırmasına bağlı olarak kullanılabilir.",
+
+        purchases_title: "5. Satın Almalar ve Abonelikler",
+        purchases_text:
+          "Uygulama içi satın almalar ve abonelikler, Apple App Store veya Google Play tarafından işlenir. Wikiverse tam ödeme kartı bilgilerinize erişmez. Premium erişimin doğrulanması için satın alma durumu, ürün kimliği ve işlemle ilişkili teknik bilgiler işlenebilir.",
+
+        rights_title: "6. Haklarınız ve Tercihleriniz",
+        rights_intro:
+          "Bulunduğunuz ülke veya bölgeye bağlı olarak kişisel verilerinizle ilgili belirli haklara sahip olabilirsiniz.",
+        rights_1: "Verileriniz hakkında bilgi talep edebilirsiniz.",
+        rights_2: "Hatalı bilgilerin düzeltilmesini isteyebilirsiniz.",
+        rights_3: "Uygun olduğu durumlarda silme veya işlemeyi sınırlandırma talebinde bulunabilirsiniz.",
+        rights_4: "Bildirimleri cihaz ayarlarınızdan kapatabilirsiniz.",
+        rights_5: "Aboneliklerinizi App Store veya Google Play hesap ayarlarınız üzerinden yönetebilirsiniz.",
+
+        children_title: "7. Çocukların Gizliliği",
+        children_text:
+          "Wikiverse, bilerek çocuklardan doğrudan kişisel bilgi toplamayı amaçlamaz. Bir çocuğa ait kişisel bilginin uygunsuz şekilde işlendiğini düşünüyorsanız, bizimle iletişime geçebilirsiniz.",
+
+        security_title: "8. Güvenlik ve Saklama",
+        security_text:
+          "Bilgilerin korunması için makul teknik ve idari önlemler alınır. Veriler, işlenme amacının gerektirdiği süre boyunca veya yasal yükümlülükler kapsamında gerekli olduğu sürece saklanabilir.",
+
+        changes_title: "9. Politika Değişiklikleri",
+        changes_text:
+          "Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişikliklerde, uygun yöntemlerle bilgilendirme yapılabilir. Güncel sürüm bu sayfada yayımlanır.",
+
+        contact_title: "İletişim",
+        contact_text:
+          "Gizlilik politikası veya verilerinizle ilgili sorularınız için bizimle iletişime geçebilirsiniz.",
+
+        footer_copy: "© 2026 Wikiverse. Tüm hakları saklıdır.",
+        footer_home: "Ana Sayfa",
+        footer_privacy: "Gizlilik",
+        footer_terms: "Koşullar",
+        footer_contact: "İletişim"
+      },
+
+      en: {
+        brand_subtitle: "Wikipedia, refined",
+
+        nav_features: "Features",
+        nav_privacy: "Privacy",
+        nav_terms: "Terms",
+        nav_support: "Support",
+
+        eyebrow: "Privacy Policy",
+        page_title: "Privacy Policy",
+        page_intro:
+          "This policy explains what information may be processed when you use Wikiverse, why it may be used, and how you can manage your privacy preferences.",
+        effective_date: "Effective date: April 28, 2026",
+        app_name: "Wikiverse App",
+
+        toc_title: "Contents",
+        toc_overview: "Overview",
+        toc_data: "Information Collected",
+        toc_usage: "How We Use Information",
+        toc_services: "Third-Party Services",
+        toc_purchases: "Purchases",
+        toc_rights: "Your Rights",
+        toc_children: "Children’s Privacy",
+        toc_contact: "Contact",
+
+        notice_title: "Short summary",
+        notice_text:
+          "Wikiverse may process limited technical data to improve the experience, understand app performance, and manage premium access. We do not request direct identity information; however, services used by the app may process technical data related to device, usage, and purchase status.",
+
+        overview_title: "1. Overview",
+        overview_text:
+          "Wikiverse is an independent app designed for discovering, reading, and saving Wikipedia content. This Privacy Policy is intended to inform users about information that may be processed through the app and related support pages.",
+
+        data_title: "2. Information We May Collect",
+        data_intro: "When using Wikiverse, the following types of information may be processed:",
+        data_1: "Technical information such as app performance, crash reports, and error logs.",
+        data_2: "General in-app usage interactions and feature usage data.",
+        data_3: "Transaction information needed to verify premium access, subscriptions, or purchases.",
+        data_4: "Notification preferences or technical identifiers related to device notifications.",
+        data_5: "Your email address and message content when you contact us for support.",
+
+        usage_title: "3. How We Use Information",
+        usage_intro: "Processed information may be used for the following purposes:",
+        usage_1: "To keep the app secure, stable, and functioning correctly.",
+        usage_2: "To detect errors, measure performance, and improve the user experience.",
+        usage_3: "To manage premium access, subscriptions, and purchase status.",
+        usage_4: "To respond to user support requests.",
+        usage_5: "To comply with legal obligations and platform requirements.",
+
+        services_title: "4. Third-Party Services",
+        services_text:
+          "Wikiverse may use third-party services for analytics, crash reporting, notifications, advertising, in-app purchases, or premium access management. These services may process technical data according to their own privacy policies.",
+        services_1: "Apple App Store and Google Play purchase infrastructure.",
+        services_2: "Premium access and subscription management services.",
+        services_3: "Analytics, crash reporting, and performance measurement services.",
+        services_4: "Advertising or notification infrastructure may be used depending on app configuration.",
+
+        purchases_title: "5. Purchases and Subscriptions",
+        purchases_text:
+          "In-app purchases and subscriptions are processed by Apple App Store or Google Play. Wikiverse does not access your full payment card details. Purchase status, product identifiers, and transaction-related technical information may be processed to verify premium access.",
+
+        rights_title: "6. Your Rights and Choices",
+        rights_intro:
+          "Depending on your country or region, you may have certain rights regarding your personal data.",
+        rights_1: "You may request information about your data.",
+        rights_2: "You may request correction of inaccurate information.",
+        rights_3: "Where applicable, you may request deletion or restriction of processing.",
+        rights_4: "You can disable notifications from your device settings.",
+        rights_5: "You can manage subscriptions through your App Store or Google Play account settings.",
+
+        children_title: "7. Children’s Privacy",
+        children_text:
+          "Wikiverse does not knowingly seek to collect personal information directly from children. If you believe that a child’s personal information has been improperly processed, you may contact us.",
+
+        security_title: "8. Security and Retention",
+        security_text:
+          "Reasonable technical and administrative measures are taken to protect information. Data may be retained for as long as required for the purpose for which it was processed or as necessary to comply with legal obligations.",
+
+        changes_title: "9. Changes to This Policy",
+        changes_text:
+          "This Privacy Policy may be updated from time to time. In case of significant changes, appropriate notice may be provided. The current version will be published on this page.",
+
+        contact_title: "Contact",
+        contact_text:
+          "For questions about this Privacy Policy or your data, you can contact us.",
+
+        footer_copy: "© 2026 Wikiverse. All rights reserved.",
+        footer_home: "Home",
+        footer_privacy: "Privacy",
+        footer_terms: "Terms",
+        footer_contact: "Contact"
+      }
+    };
+
+    const buttons = document.querySelectorAll(".lang-btn");
+    const translatableElements = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.tr;
+
+      document.documentElement.lang = lang;
+
+      translatableElements.forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+
+      document.title = lang === "tr"
+        ? "Gizlilik Politikası | Wikiverse"
+        : "Privacy Policy | Wikiverse";
+
+      localStorage.setItem("wikiverse_language", lang);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.lang);
+      });
+    });
+
+    const savedLanguage = localStorage.getItem("wikiverse_language");
+    const browserLanguage =
+      navigator.language && navigator.language.startsWith("tr") ? "tr" : "en";
+
+    setLanguage(savedLanguage || browserLanguage);
+  </script>
 </body>
 </html>
