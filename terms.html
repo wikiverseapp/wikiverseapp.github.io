@@ -3,198 +3,946 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wikiverse Kullanım Koşulları / Terms of Use</title>
+
+  <title>Terms of Use | Wikiverse</title>
+  <meta
+    name="description"
+    content="Wikiverse kullanım koşulları. Uygulama kullanımı, premium erişim, abonelikler ve destek bilgileri."
+  />
+
   <style>
-    :root { color-scheme: light dark; }
+    :root {
+      color-scheme: dark;
+
+      --bg: #0b0b0a;
+      --paper: #efede6;
+
+      --text: #f1efe8;
+      --muted: rgba(241, 239, 232, 0.64);
+      --faint: rgba(241, 239, 232, 0.38);
+
+      --dark-text: #171715;
+      --dark-muted: rgba(23, 23, 21, 0.62);
+
+      --line: rgba(239, 237, 230, 0.1);
+      --line-strong: rgba(239, 237, 230, 0.18);
+
+      --surface: rgba(239, 237, 230, 0.055);
+      --surface-hover: rgba(239, 237, 230, 0.08);
+
+      --stone: #b8b2a6;
+      --blue: #a9b4c6;
+
+      --max: 1100px;
+      --radius-lg: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 860px;
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -14%, rgba(239, 237, 230, 0.12), transparent 31%),
+        radial-gradient(circle at 100% 18%, rgba(169, 180, 198, 0.075), transparent 24%),
+        linear-gradient(180deg, #0f0f0e 0%, #0b0b0a 48%, #070707 100%);
+      letter-spacing: -0.015em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
       margin: 0 auto;
-      padding: 40px 20px 64px;
-      line-height: 1.7;
-      color: #111827;
-      background: #ffffff;
     }
-    h1, h2, h3 { color: #0f172a; line-height: 1.2; }
-    h1 { font-size: 32px; margin-bottom: 8px; }
-    h2 { margin-top: 36px; font-size: 24px; }
-    h3 { margin-top: 22px; font-size: 18px; }
-    p, li { font-size: 16px; }
-    .muted { color: #6b7280; }
-    .card {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-top: 20px;
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11, 11, 10, 0.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(239, 237, 230, 0.08);
     }
-    hr {
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: var(--dark-text);
+      background: var(--paper);
+      font-weight: 760;
+      box-shadow:
+        inset 0 -1px 0 rgba(0,0,0,0.12),
+        0 12px 28px rgba(0,0,0,0.24);
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 3px;
+    }
+
+    .brand-copy strong {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-copy span {
+      color: var(--faint);
+      font-size: 0.77rem;
+      font-weight: 520;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 560;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .language-switch {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(239, 237, 230, 0.13);
+      background: rgba(239, 237, 230, 0.055);
+    }
+
+    .lang-btn {
+      height: 30px;
+      min-width: 38px;
       border: 0;
-      border-top: 1px solid #e5e7eb;
-      margin: 40px 0;
+      border-radius: 999px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--faint);
+      font-size: 0.76rem;
+      font-weight: 720;
     }
-    a { color: #2563eb; }
-    @media (prefers-color-scheme: dark) {
-      body { color: #e5e7eb; background: #020617; }
-      h1, h2, h3 { color: #f8fafc; }
-      .muted { color: #94a3b8; }
-      .card { background: #0f172a; border-color: #1e293b; }
-      hr { border-top-color: #1e293b; }
-      a { color: #93c5fd; }
+
+    .lang-btn.active {
+      background: var(--paper);
+      color: var(--dark-text);
+    }
+
+    .page {
+      padding: 82px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 52px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: var(--stone);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 760;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      color: var(--paper);
+      font-size: clamp(3rem, 6.5vw, 6.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+      font-weight: 650;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.24vw, 1.1rem);
+      line-height: 1.78;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .meta-pill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(239, 237, 230, 0.055);
+      border: 1px solid rgba(239, 237, 230, 0.1);
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 96px;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      background: rgba(239, 237, 230, 0.048);
+      border: 1px solid rgba(239, 237, 230, 0.1);
+    }
+
+    .toc-title {
+      color: var(--faint);
+      font-size: 0.76rem;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    .toc nav {
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc a {
+      padding: 9px 10px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.35;
+      transition: 0.16s ease;
+    }
+
+    .toc a:hover {
+      color: var(--text);
+      background: rgba(239, 237, 230, 0.055);
+    }
+
+    .content {
+      display: grid;
+      gap: 14px;
+    }
+
+    .notice {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      color: var(--dark-text);
+    }
+
+    .notice strong {
+      display: block;
+      font-size: 1.02rem;
+      letter-spacing: -0.03em;
+    }
+
+    .notice p {
+      margin: 10px 0 0;
+      color: var(--dark-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .terms-card {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(239,237,230,0.07), rgba(239,237,230,0.043));
+      border: 1px solid rgba(239,237,230,0.105);
+    }
+
+    .terms-card h2 {
+      margin: 0;
+      color: var(--paper);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      font-weight: 660;
+    }
+
+    .terms-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.76;
+      font-size: 0.98rem;
+    }
+
+    .terms-card ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .terms-card li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.66;
+      font-size: 0.96rem;
+    }
+
+    .terms-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--stone);
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(239,237,230,0.055);
+      border: 1px solid rgba(239,237,230,0.12);
+    }
+
+    .contact-panel strong {
+      display: block;
+      color: var(--paper);
+      font-size: 1.1rem;
+      letter-spacing: -0.035em;
+    }
+
+    .contact-panel span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .button {
+      min-height: 48px;
+      padding: 0 17px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: var(--paper);
+      color: var(--dark-text);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: 0.18s ease;
+    }
+
+    .button:hover {
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .footer {
+      padding: 0 0 44px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(239,237,230,0.09);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--faint);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 940px) {
+      .page {
+        padding-top: 62px;
+      }
+
+      .hero,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: relative;
+        top: auto;
+      }
+
+      .toc nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .page {
+        padding: 48px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 14vw, 4.6rem);
+      }
+
+      .toc nav {
+        grid-template-columns: 1fr;
+      }
+
+      .terms-card,
+      .notice,
+      .contact-panel {
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Kullanım Koşulları</h1>
-  <p class="muted">Son güncelleme: 28 Nisan 2026</p>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Wikiverse">
+          <span class="mark">W</span>
+          <span class="brand-copy">
+            <strong>Wikiverse</strong>
+            <span data-i18n="brand_subtitle">Wikipedia, refined</span>
+          </span>
+        </a>
 
-  <div class="card">
-    <p>
-      Bu Kullanım Koşulları, Wikiverse uygulamasını kullanırken geçerli olan temel
-      kuralları ve premium üyeliklere ilişkin genel koşulları açıklar.
-    </p>
-  </div>
+        <div class="nav-right">
+          <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html#features" data-i18n="nav_features">Özellikler</a>
+            <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+            <a href="terms.html" class="active" data-i18n="nav_terms">Koşullar</a>
+            <a href="mailto:wikiverseapp@gmail.com" data-i18n="nav_support">Destek</a>
+          </nav>
 
-  <h2>1. Hizmetin Kapsamı</h2>
-  <p>
-    Wikiverse; içerik keşfi, okuma, kaydetme, çevrimdışı erişim ve bazı premium
-    özellikler sunabilen bir uygulamadır. Uygulama özellikleri zaman içinde
-    güncellenebilir, değiştirilebilir veya kaldırılabilir.
-  </p>
+          <div class="language-switch" aria-label="Language selector">
+            <button class="lang-btn active" type="button" data-lang="tr">TR</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h2>2. Kullanım Şartları</h2>
-  <ul>
-    <li>Uygulamayı yürürlükteki yasalara uygun şekilde kullanmalısınız.</li>
-    <li>Uygulamanın işleyişini bozacak, kötüye kullanacak veya manipüle edecek davranışlarda bulunmamalısınız.</li>
-    <li>Uygulama içindeki içerik ve özellikler yalnızca kişisel kullanım amacıyla sunulmaktadır.</li>
-  </ul>
+  <main class="page">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <div class="eyebrow" data-i18n="eyebrow">Terms of Use</div>
+          <h1 data-i18n="page_title">Kullanım Koşulları</h1>
+        </div>
 
-  <h2>3. İçerik ve Sorumluluk Sınırı</h2>
-  <p>
-    Wikiverse, üçüncü taraf içerik kaynakları ve açık bilgi altyapılarıyla
-    çalışabilir. Uygulamada gösterilen içeriklerin doğruluğu, güncelliği veya
-    eksiksizliği her durumda garanti edilmez.
-  </p>
-  <p>
-    Uygulama mümkün olan en iyi deneyimi sunmak için tasarlanmıştır; ancak kesintisiz,
-    hatasız veya her cihazda aynı şekilde çalışacağı garanti edilmez.
-  </p>
+        <div class="hero-copy">
+          <p data-i18n="page_intro">
+            Bu koşullar, Wikiverse uygulamasını ve ilgili destek sayfalarını kullanırken
+            geçerli olan temel kuralları, premium erişim şartlarını ve kullanıcı sorumluluklarını açıklar.
+          </p>
 
-  <h2>4. Premium Üyelikler ve Satın Almalar</h2>
-  <p>
-    Premium özellikler abonelik veya tek seferlik satın alma yoluyla sunulabilir.
-    Satın almalar Apple App Store veya Google Play üzerinden gerçekleştirilir.
-  </p>
-  <ul>
-    <li>Abonelikler, ilgili mağazada belirtilen şartlara göre otomatik yenilenebilir.</li>
-    <li>Abonelik iptali ve yönetimi ilgili App Store / Google Play hesabı üzerinden yapılır.</li>
-    <li>Geri ödemeler ilgili mağazanın politikalarına tabidir.</li>
-    <li>Satın almaların geri yüklenmesi, mağaza hesabınız uygunsa desteklenebilir.</li>
-  </ul>
+          <div class="meta-row">
+            <span class="meta-pill" data-i18n="effective_date">Yürürlük tarihi: 28 Nisan 2026</span>
+            <span class="meta-pill" data-i18n="app_name">Wikiverse App</span>
+          </div>
+        </div>
+      </section>
 
-  <h2>5. Reklamlar</h2>
-  <p>
-    Uygulamanın ücretsiz sürümünde reklam gösterilebilir. Premium sürümlerde bazı
-    reklam deneyimleri kaldırılabilir veya azaltılabilir.
-  </p>
+      <div class="layout">
+        <aside class="toc" aria-label="Terms sections">
+          <div class="toc-title" data-i18n="toc_title">İçindekiler</div>
+          <nav>
+            <a href="#overview" data-i18n="toc_overview">Genel Bakış</a>
+            <a href="#use" data-i18n="toc_use">Uygulama Kullanımı</a>
+            <a href="#account" data-i18n="toc_account">Hesap ve Cihaz</a>
+            <a href="#premium" data-i18n="toc_premium">Premium Erişim</a>
+            <a href="#subscriptions" data-i18n="toc_subscriptions">Abonelikler</a>
+            <a href="#content" data-i18n="toc_content">İçerik ve Kaynaklar</a>
+            <a href="#limitations" data-i18n="toc_limitations">Sorumluluk Sınırı</a>
+            <a href="#contact" data-i18n="toc_contact">İletişim</a>
+          </nav>
+        </aside>
 
-  <h2>6. Fikri Mülkiyet</h2>
-  <p>
-    Wikiverse uygulamasına ait tasarım, yazılım, marka unsurları ve uygulamaya özgü
-    bileşenler ilgili hak sahiplerine aittir. Üçüncü taraf içeriklerin hakları ise
-    kendi sağlayıcılarına aittir.
-  </p>
+        <div class="content">
+          <section class="notice">
+            <strong data-i18n="notice_title">Kısa özet</strong>
+            <p data-i18n="notice_text">
+              Wikiverse, Wikipedia içeriklerini daha sade keşfetmenize ve kaydetmenize yardımcı olan
+              bağımsız bir uygulamadır. Uygulamayı kullanarak bu koşulları kabul etmiş olursunuz.
+              Premium özellikler, ilgili mağaza ve abonelik kurallarına tabidir.
+            </p>
+          </section>
 
-  <h2>7. Hizmette Değişiklik</h2>
-  <p>
-    Uygulama özellikleri, fiyatlandırma yapısı, premium planlar ve desteklenen
-    işlevler zaman zaman değiştirilebilir.
-  </p>
+          <section class="terms-card" id="overview">
+            <h2 data-i18n="overview_title">1. Genel Bakış</h2>
+            <p data-i18n="overview_text">
+              Bu Kullanım Koşulları, Wikiverse uygulamasını, web destek sayfalarını ve uygulamayla
+              ilişkili hizmetleri kullanımınızı düzenler. Uygulamayı kullanarak bu koşullara uymayı
+              kabul edersiniz. Bu koşulları kabul etmiyorsanız uygulamayı kullanmamalısınız.
+            </p>
+          </section>
 
-  <h2>8. Sorumluluğun Sınırlandırılması</h2>
-  <p>
-    Yürürlükteki hukukun izin verdiği ölçüde, Wikiverse; dolaylı, tesadüfi veya
-    sonuç olarak ortaya çıkan zararlar bakımından sorumlu tutulamaz.
-  </p>
+          <section class="terms-card" id="use">
+            <h2 data-i18n="use_title">2. Uygulama Kullanımı</h2>
+            <p data-i18n="use_intro">
+              Wikiverse’i yalnızca yasal, güvenli ve kişisel kullanım amaçlarıyla kullanabilirsiniz.
+            </p>
+            <ul>
+              <li data-i18n="use_1">Uygulamayı kötüye kullanmamalı, tersine mühendislik yapmamalı veya güvenlik önlemlerini aşmaya çalışmamalısınız.</li>
+              <li data-i18n="use_2">Uygulamanın çalışmasını bozacak, aşırı yük oluşturacak veya diğer kullanıcıların deneyimini olumsuz etkileyecek davranışlardan kaçınmalısınız.</li>
+              <li data-i18n="use_3">Uygulamada sunulan özellikleri yalnızca izin verilen kullanım kapsamında kullanmalısınız.</li>
+            </ul>
+          </section>
 
-  <h2>9. İletişim</h2>
-  <p>
-    Sorularınız için: <a href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a>
-  </p>
+          <section class="terms-card" id="account">
+            <h2 data-i18n="account_title">3. Hesap, Cihaz ve Erişim</h2>
+            <p data-i18n="account_text">
+              Bazı özellikler cihazınıza, mağaza hesabınıza, bildirim tercihlerinize veya premium erişim
+              durumunuza bağlı olarak çalışabilir. Cihazınızın güvenliğinden, mağaza hesabınızın
+              yönetiminden ve abonelik ayarlarınızdan siz sorumlusunuz.
+            </p>
+          </section>
 
-  <hr>
+          <section class="terms-card" id="premium">
+            <h2 data-i18n="premium_title">4. Premium Erişim</h2>
+            <p data-i18n="premium_intro">
+              Wikiverse, bazı özellikleri ücretsiz olarak sunabilir; bazı özellikler ise premium erişim,
+              abonelik veya tek seferlik satın alma gerektirebilir.
+            </p>
+            <ul>
+              <li data-i18n="premium_1">Premium özelliklerin kapsamı zaman içinde değişebilir, geliştirilebilir veya yeniden düzenlenebilir.</li>
+              <li data-i18n="premium_2">Premium erişimin aktif olması, ilgili satın alma veya abonelik durumunun başarıyla doğrulanmasına bağlıdır.</li>
+              <li data-i18n="premium_3">Satın alma işlemlerinde fiyatlar, para birimleri ve deneme süreleri App Store veya Google Play üzerinde gösterildiği şekliyle geçerlidir.</li>
+            </ul>
+          </section>
 
-  <h1>Terms of Use</h1>
-  <p class="muted">Last updated: April 28, 2026</p>
+          <section class="terms-card" id="subscriptions">
+            <h2 data-i18n="subscriptions_title">5. Abonelikler, Yenileme ve İptal</h2>
+            <p data-i18n="subscriptions_intro">
+              Abonelikler, satın alma yaptığınız platformun kurallarına göre yönetilir.
+            </p>
+            <ul>
+              <li data-i18n="subscriptions_1">Abonelikler, iptal edilmediği sürece ilgili mağaza kurallarına göre otomatik olarak yenilenebilir.</li>
+              <li data-i18n="subscriptions_2">Aboneliğinizi App Store veya Google Play hesap ayarlarınız üzerinden yönetebilir veya iptal edebilirsiniz.</li>
+              <li data-i18n="subscriptions_3">İptal işlemi, mevcut fatura döneminin sonunda geçerli olabilir. Kullanılmayan süreler için iade, ilgili mağazanın politikalarına tabidir.</li>
+              <li data-i18n="subscriptions_4">Ücretsiz deneme sunuluyorsa, deneme süresi ve yenileme bilgileri satın alma ekranında belirtilir.</li>
+            </ul>
+          </section>
 
-  <div class="card">
-    <p>
-      These Terms of Use explain the basic rules that apply when using Wikiverse
-      and the general conditions related to premium access.
-    </p>
-  </div>
+          <section class="terms-card" id="content">
+            <h2 data-i18n="content_title">6. İçerik ve Üçüncü Taraf Kaynaklar</h2>
+            <p data-i18n="content_text">
+              Wikiverse, Wikipedia ve ilgili açık bilgi kaynaklarını keşfetmeye yönelik bir deneyim sunar.
+              Uygulama, Wikipedia veya Wikimedia Foundation ile bağlı, sponsorlu ya da resmi olarak
+              onaylanmış bir ürün değildir. Üçüncü taraf içeriklerin doğruluğu, güncelliği veya
+              kullanılabilirliği üzerinde tam kontrolümüz bulunmayabilir.
+            </p>
+          </section>
 
-  <h2>1. Scope of the Service</h2>
-  <p>
-    Wikiverse is an app that may offer content discovery, reading, saving, offline
-    access, and premium features. App features may be updated, changed, or removed over time.
-  </p>
+          <section class="terms-card" id="availability">
+            <h2 data-i18n="availability_title">7. Hizmetin Kullanılabilirliği</h2>
+            <p data-i18n="availability_text">
+              Uygulamanın kesintisiz, hatasız veya her zaman erişilebilir olacağını garanti etmeyiz.
+              Bakım, teknik sorunlar, platform değişiklikleri, internet bağlantısı, üçüncü taraf servisler
+              veya mağaza altyapıları uygulama deneyimini etkileyebilir.
+            </p>
+          </section>
 
-  <h2>2. Conditions of Use</h2>
-  <ul>
-    <li>You must use the app in compliance with applicable laws.</li>
-    <li>You must not misuse, disrupt, or manipulate the app or its services.</li>
-    <li>The features and content are provided for personal use only.</li>
-  </ul>
+          <section class="terms-card" id="limitations">
+            <h2 data-i18n="limitations_title">8. Sorumluluk Sınırı</h2>
+            <p data-i18n="limitations_text">
+              Wikiverse, uygulanabilir yasaların izin verdiği ölçüde; uygulamanın kullanımı, erişim
+              kesintileri, veri kaybı, üçüncü taraf içerikler veya satın alma platformlarından kaynaklanan
+              sorunlardan doğabilecek dolaylı zararlardan sorumlu değildir.
+            </p>
+          </section>
 
-  <h2>3. Content and Disclaimer</h2>
-  <p>
-    Wikiverse may rely on third-party content sources and open information
-    infrastructures. The accuracy, completeness, or timeliness of content cannot
-    be guaranteed in all cases.
-  </p>
-  <p>
-    The app is designed to provide the best possible experience, but uninterrupted
-    or error-free operation on all devices cannot be guaranteed.
-  </p>
+          <section class="terms-card">
+            <h2 data-i18n="privacy_title">9. Gizlilik</h2>
+            <p data-i18n="privacy_text">
+              Wikiverse’in veri işleme yaklaşımı hakkında daha fazla bilgi için Gizlilik Politikası
+              sayfasını inceleyebilirsiniz.
+            </p>
+          </section>
 
-  <h2>4. Premium Access and Purchases</h2>
-  <p>
-    Premium features may be offered through subscriptions or one-time purchases.
-    Purchases are processed through Apple App Store or Google Play.
-  </p>
-  <ul>
-    <li>Subscriptions may renew automatically according to the store’s terms.</li>
-    <li>Subscription management and cancellation are handled through the relevant store account.</li>
-    <li>Refunds are subject to the policies of the relevant store.</li>
-    <li>Restore purchases may be supported when the store account is eligible.</li>
-  </ul>
+          <section class="terms-card">
+            <h2 data-i18n="changes_title">10. Koşullardaki Değişiklikler</h2>
+            <p data-i18n="changes_text">
+              Bu Kullanım Koşulları zaman zaman güncellenebilir. Güncel koşullar bu sayfada yayımlanır.
+              Uygulamayı kullanmaya devam etmeniz, güncellenmiş koşulları kabul ettiğiniz anlamına gelebilir.
+            </p>
+          </section>
 
-  <h2>5. Advertising</h2>
-  <p>
-    Ads may appear in the free version of the app. Premium versions may remove or
-    reduce certain ad experiences.
-  </p>
+          <section class="contact-panel" id="contact">
+            <div>
+              <strong data-i18n="contact_title">İletişim</strong>
+              <span data-i18n="contact_text">
+                Kullanım koşulları, premium erişim veya aboneliklerle ilgili sorularınız için bizimle iletişime geçebilirsiniz.
+              </span>
+            </div>
 
-  <h2>6. Intellectual Property</h2>
-  <p>
-    The app’s software, branding, design, and app-specific components belong to
-    their respective rights holders. Third-party content remains subject to the rights of its providers.
-  </p>
+            <a class="button" href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  <h2>7. Changes to the Service</h2>
-  <p>
-    App features, pricing structures, premium plans, and supported functionality
-    may change from time to time.
-  </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div data-i18n="footer_copy">© 2026 Wikiverse. Tüm hakları saklıdır.</div>
 
-  <h2>8. Limitation of Liability</h2>
-  <p>
-    To the extent permitted by applicable law, Wikiverse shall not be liable for
-    indirect, incidental, or consequential damages.
-  </p>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="footer_home">Ana Sayfa</a>
+          <a href="privacy.html" data-i18n="footer_privacy">Gizlilik</a>
+          <a href="terms.html" data-i18n="footer_terms">Koşullar</a>
+          <a href="mailto:wikiverseapp@gmail.com" data-i18n="footer_contact">İletişim</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  <h2>9. Contact</h2>
-  <p><a href="mailto:wikiverseapp@gmail.com">wikiverseapp@gmail.com</a></p>
+  <script>
+    const translations = {
+      tr: {
+        brand_subtitle: "Wikipedia, refined",
+
+        nav_features: "Özellikler",
+        nav_privacy: "Gizlilik",
+        nav_terms: "Koşullar",
+        nav_support: "Destek",
+
+        eyebrow: "Terms of Use",
+        page_title: "Kullanım Koşulları",
+        page_intro:
+          "Bu koşullar, Wikiverse uygulamasını ve ilgili destek sayfalarını kullanırken geçerli olan temel kuralları, premium erişim şartlarını ve kullanıcı sorumluluklarını açıklar.",
+        effective_date: "Yürürlük tarihi: 28 Nisan 2026",
+        app_name: "Wikiverse App",
+
+        toc_title: "İçindekiler",
+        toc_overview: "Genel Bakış",
+        toc_use: "Uygulama Kullanımı",
+        toc_account: "Hesap ve Cihaz",
+        toc_premium: "Premium Erişim",
+        toc_subscriptions: "Abonelikler",
+        toc_content: "İçerik ve Kaynaklar",
+        toc_limitations: "Sorumluluk Sınırı",
+        toc_contact: "İletişim",
+
+        notice_title: "Kısa özet",
+        notice_text:
+          "Wikiverse, Wikipedia içeriklerini daha sade keşfetmenize ve kaydetmenize yardımcı olan bağımsız bir uygulamadır. Uygulamayı kullanarak bu koşulları kabul etmiş olursunuz. Premium özellikler, ilgili mağaza ve abonelik kurallarına tabidir.",
+
+        overview_title: "1. Genel Bakış",
+        overview_text:
+          "Bu Kullanım Koşulları, Wikiverse uygulamasını, web destek sayfalarını ve uygulamayla ilişkili hizmetleri kullanımınızı düzenler. Uygulamayı kullanarak bu koşullara uymayı kabul edersiniz. Bu koşulları kabul etmiyorsanız uygulamayı kullanmamalısınız.",
+
+        use_title: "2. Uygulama Kullanımı",
+        use_intro:
+          "Wikiverse’i yalnızca yasal, güvenli ve kişisel kullanım amaçlarıyla kullanabilirsiniz.",
+        use_1:
+          "Uygulamayı kötüye kullanmamalı, tersine mühendislik yapmamalı veya güvenlik önlemlerini aşmaya çalışmamalısınız.",
+        use_2:
+          "Uygulamanın çalışmasını bozacak, aşırı yük oluşturacak veya diğer kullanıcıların deneyimini olumsuz etkileyecek davranışlardan kaçınmalısınız.",
+        use_3:
+          "Uygulamada sunulan özellikleri yalnızca izin verilen kullanım kapsamında kullanmalısınız.",
+
+        account_title: "3. Hesap, Cihaz ve Erişim",
+        account_text:
+          "Bazı özellikler cihazınıza, mağaza hesabınıza, bildirim tercihlerinize veya premium erişim durumunuza bağlı olarak çalışabilir. Cihazınızın güvenliğinden, mağaza hesabınızın yönetiminden ve abonelik ayarlarınızdan siz sorumlusunuz.",
+
+        premium_title: "4. Premium Erişim",
+        premium_intro:
+          "Wikiverse, bazı özellikleri ücretsiz olarak sunabilir; bazı özellikler ise premium erişim, abonelik veya tek seferlik satın alma gerektirebilir.",
+        premium_1:
+          "Premium özelliklerin kapsamı zaman içinde değişebilir, geliştirilebilir veya yeniden düzenlenebilir.",
+        premium_2:
+          "Premium erişimin aktif olması, ilgili satın alma veya abonelik durumunun başarıyla doğrulanmasına bağlıdır.",
+        premium_3:
+          "Satın alma işlemlerinde fiyatlar, para birimleri ve deneme süreleri App Store veya Google Play üzerinde gösterildiği şekliyle geçerlidir.",
+
+        subscriptions_title: "5. Abonelikler, Yenileme ve İptal",
+        subscriptions_intro:
+          "Abonelikler, satın alma yaptığınız platformun kurallarına göre yönetilir.",
+        subscriptions_1:
+          "Abonelikler, iptal edilmediği sürece ilgili mağaza kurallarına göre otomatik olarak yenilenebilir.",
+        subscriptions_2:
+          "Aboneliğinizi App Store veya Google Play hesap ayarlarınız üzerinden yönetebilir veya iptal edebilirsiniz.",
+        subscriptions_3:
+          "İptal işlemi, mevcut fatura döneminin sonunda geçerli olabilir. Kullanılmayan süreler için iade, ilgili mağazanın politikalarına tabidir.",
+        subscriptions_4:
+          "Ücretsiz deneme sunuluyorsa, deneme süresi ve yenileme bilgileri satın alma ekranında belirtilir.",
+
+        content_title: "6. İçerik ve Üçüncü Taraf Kaynaklar",
+        content_text:
+          "Wikiverse, Wikipedia ve ilgili açık bilgi kaynaklarını keşfetmeye yönelik bir deneyim sunar. Uygulama, Wikipedia veya Wikimedia Foundation ile bağlı, sponsorlu ya da resmi olarak onaylanmış bir ürün değildir. Üçüncü taraf içeriklerin doğruluğu, güncelliği veya kullanılabilirliği üzerinde tam kontrolümüz bulunmayabilir.",
+
+        availability_title: "7. Hizmetin Kullanılabilirliği",
+        availability_text:
+          "Uygulamanın kesintisiz, hatasız veya her zaman erişilebilir olacağını garanti etmeyiz. Bakım, teknik sorunlar, platform değişiklikleri, internet bağlantısı, üçüncü taraf servisler veya mağaza altyapıları uygulama deneyimini etkileyebilir.",
+
+        limitations_title: "8. Sorumluluk Sınırı",
+        limitations_text:
+          "Wikiverse, uygulanabilir yasaların izin verdiği ölçüde; uygulamanın kullanımı, erişim kesintileri, veri kaybı, üçüncü taraf içerikler veya satın alma platformlarından kaynaklanan sorunlardan doğabilecek dolaylı zararlardan sorumlu değildir.",
+
+        privacy_title: "9. Gizlilik",
+        privacy_text:
+          "Wikiverse’in veri işleme yaklaşımı hakkında daha fazla bilgi için Gizlilik Politikası sayfasını inceleyebilirsiniz.",
+
+        changes_title: "10. Koşullardaki Değişiklikler",
+        changes_text:
+          "Bu Kullanım Koşulları zaman zaman güncellenebilir. Güncel koşullar bu sayfada yayımlanır. Uygulamayı kullanmaya devam etmeniz, güncellenmiş koşulları kabul ettiğiniz anlamına gelebilir.",
+
+        contact_title: "İletişim",
+        contact_text:
+          "Kullanım koşulları, premium erişim veya aboneliklerle ilgili sorularınız için bizimle iletişime geçebilirsiniz.",
+
+        footer_copy: "© 2026 Wikiverse. Tüm hakları saklıdır.",
+        footer_home: "Ana Sayfa",
+        footer_privacy: "Gizlilik",
+        footer_terms: "Koşullar",
+        footer_contact: "İletişim"
+      },
+
+      en: {
+        brand_subtitle: "Wikipedia, refined",
+
+        nav_features: "Features",
+        nav_privacy: "Privacy",
+        nav_terms: "Terms",
+        nav_support: "Support",
+
+        eyebrow: "Terms of Use",
+        page_title: "Terms of Use",
+        page_intro:
+          "These terms explain the basic rules, premium access conditions, and user responsibilities that apply when using the Wikiverse app and related support pages.",
+        effective_date: "Effective date: April 28, 2026",
+        app_name: "Wikiverse App",
+
+        toc_title: "Contents",
+        toc_overview: "Overview",
+        toc_use: "App Use",
+        toc_account: "Account and Device",
+        toc_premium: "Premium Access",
+        toc_subscriptions: "Subscriptions",
+        toc_content: "Content and Sources",
+        toc_limitations: "Limitation of Liability",
+        toc_contact: "Contact",
+
+        notice_title: "Short summary",
+        notice_text:
+          "Wikiverse is an independent app that helps you discover and save Wikipedia content in a cleaner way. By using the app, you agree to these terms. Premium features are subject to the applicable store and subscription rules.",
+
+        overview_title: "1. Overview",
+        overview_text:
+          "These Terms of Use govern your use of the Wikiverse app, web support pages, and related services. By using the app, you agree to comply with these terms. If you do not agree to these terms, you should not use the app.",
+
+        use_title: "2. App Use",
+        use_intro:
+          "You may use Wikiverse only for lawful, safe, and personal purposes.",
+        use_1:
+          "You must not misuse the app, reverse engineer it, or attempt to bypass security measures.",
+        use_2:
+          "You must avoid actions that may disrupt the app, create excessive load, or negatively affect the experience of other users.",
+        use_3:
+          "You must use the features provided in the app only within the permitted scope of use.",
+
+        account_title: "3. Account, Device, and Access",
+        account_text:
+          "Some features may depend on your device, store account, notification preferences, or premium access status. You are responsible for the security of your device, management of your store account, and subscription settings.",
+
+        premium_title: "4. Premium Access",
+        premium_intro:
+          "Wikiverse may offer some features for free, while others may require premium access, a subscription, or a one-time purchase.",
+        premium_1:
+          "The scope of premium features may change, improve, or be reorganized over time.",
+        premium_2:
+          "Active premium access depends on successful verification of the relevant purchase or subscription status.",
+        premium_3:
+          "For purchases, prices, currencies, and trial periods apply as displayed on the App Store or Google Play.",
+
+        subscriptions_title: "5. Subscriptions, Renewal, and Cancellation",
+        subscriptions_intro:
+          "Subscriptions are managed according to the rules of the platform where the purchase was made.",
+        subscriptions_1:
+          "Subscriptions may automatically renew according to the applicable store rules unless cancelled.",
+        subscriptions_2:
+          "You can manage or cancel your subscription through your App Store or Google Play account settings.",
+        subscriptions_3:
+          "Cancellation may take effect at the end of the current billing period. Refunds for unused periods are subject to the applicable store policies.",
+        subscriptions_4:
+          "If a free trial is offered, the trial period and renewal details are shown on the purchase screen.",
+
+        content_title: "6. Content and Third-Party Sources",
+        content_text:
+          "Wikiverse provides an experience for discovering Wikipedia and related open knowledge sources. The app is not affiliated with, sponsored by, or officially endorsed by Wikipedia or the Wikimedia Foundation. We may not have full control over the accuracy, freshness, or availability of third-party content.",
+
+        availability_title: "7. Service Availability",
+        availability_text:
+          "We do not guarantee that the app will be uninterrupted, error-free, or always available. Maintenance, technical issues, platform changes, internet connectivity, third-party services, or store infrastructure may affect the app experience.",
+
+        limitations_title: "8. Limitation of Liability",
+        limitations_text:
+          "To the extent permitted by applicable law, Wikiverse is not responsible for indirect damages that may arise from app use, access interruptions, data loss, third-party content, or issues caused by purchase platforms.",
+
+        privacy_title: "9. Privacy",
+        privacy_text:
+          "For more information about Wikiverse’s approach to data processing, please review the Privacy Policy page.",
+
+        changes_title: "10. Changes to These Terms",
+        changes_text:
+          "These Terms of Use may be updated from time to time. The current terms will be published on this page. Continuing to use the app may mean that you accept the updated terms.",
+
+        contact_title: "Contact",
+        contact_text:
+          "For questions about these terms, premium access, or subscriptions, you can contact us.",
+
+        footer_copy: "© 2026 Wikiverse. All rights reserved.",
+        footer_home: "Home",
+        footer_privacy: "Privacy",
+        footer_terms: "Terms",
+        footer_contact: "Contact"
+      }
+    };
+
+    const buttons = document.querySelectorAll(".lang-btn");
+    const translatableElements = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.tr;
+
+      document.documentElement.lang = lang;
+
+      translatableElements.forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+
+      document.title = lang === "tr"
+        ? "Kullanım Koşulları | Wikiverse"
+        : "Terms of Use | Wikiverse";
+
+      localStorage.setItem("wikiverse_language", lang);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.lang);
+      });
+    });
+
+    const savedLanguage = localStorage.getItem("wikiverse_language");
+    const browserLanguage =
+      navigator.language && navigator.language.startsWith("tr") ? "tr" : "en";
+
+    setLanguage(savedLanguage || browserLanguage);
+  </script>
 </body>
 </html>
